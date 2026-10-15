@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Fix mouse scroll: html is the primary, single viewport scroll root */
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100%;
+    height: auto;
+  }
+
+  /* Body must NEVER have overflow-x: hidden or overflow-y: auto, as it traps mouse wheel scrolling in Chromium */
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0f17;
+    color: #dfe2ee;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  #root {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  /* Headings use Outfit */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Material Symbols sizing and defaults */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262a33;
+  border-radius: 9999px;
+  border: 2px solid #0a0e16;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Firefox scrollbar support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #262a33 #0a0e16;
+}
+
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar,
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Audio EQ Frequency Bars Animation */
+@keyframes soundwave {
+  0%, 100% {
+    height: 4px;
+  }
+  50% {
+    height: 22px;
+  }
+}
+
+.hero-freq-bar, .wave-bar {
+  animation: soundwave 1.4s ease-in-out infinite alternate;
+}
+
+/* Glassmorphism Presets according to DESIGN.md */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-overlay {
+  background: rgba(31, 41, 55, 0.9);
+  backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.65);
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: 0 0 24px -4px rgba(37, 99, 235, 0.35);
+}
+
+.glow-primary-hover:hover {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}

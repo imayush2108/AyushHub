@@ -1,0 +1,617 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>Ayush Hub</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed": "#07006c",
+          "on-error": "#690005",
+          "on-tertiary-fixed": "#002113",
+          "on-secondary": "#1000a9",
+          "on-primary-fixed-variant": "#003ea8",
+          "surface-container": "#151b26",
+          "tertiary-fixed-dim": "#4edea3",
+          "surface-container-highest": "#242e40",
+          "outline": "#64748b",
+          "tertiary-fixed": "#6ffbbe",
+          "on-tertiary-fixed-variant": "#005236",
+          "on-primary-fixed": "#00174b",
+          "on-tertiary": "#003824",
+          "primary-fixed-dim": "#b4c5ff",
+          "on-primary": "#002a78",
+          "on-tertiary-container": "#bdffdb",
+          "inverse-primary": "#0053db",
+          "surface-bright": "#283449",
+          "secondary": "#93c5fd",
+          "surface-tint": "#3b82f6",
+          "on-surface-variant": "#94a3b8",
+          "secondary-container": "#1e3a8a",
+          "on-secondary-fixed-variant": "#2f2ebe",
+          "inverse-surface": "#e2e8f0",
+          "surface-variant": "#1e293b",
+          "surface-container-high": "#1c2536",
+          "surface": "#0b0f17",
+          "on-primary-container": "#eff6ff",
+          "error": "#f87171",
+          "tertiary": "#38bdf8",
+          "primary": "#3b82f6",
+          "error-container": "#7f1d1d",
+          "outline-variant": "#334155",
+          "surface-dim": "#080c14",
+          "surface-container-low": "#101622",
+          "secondary-fixed-dim": "#c0c1ff",
+          "primary-container": "#2563eb",
+          "tertiary-container": "#0369a1",
+          "on-secondary-container": "#dbeafe",
+          "on-background": "#f1f5f9",
+          "inverse-on-surface": "#1e293b",
+          "background": "#0b0f17",
+          "surface-container-lowest": "#070a10",
+          "primary-fixed": "#dbeafe",
+          "on-surface": "#f1f5f9",
+          "secondary-fixed": "#e0e7ff",
+          "on-error-container": "#fef2f2"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "2xl": "1rem",
+          "3xl": "1.5rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "margin": "2.5rem",
+          "margin-mobile": "1.25rem",
+          "space-xs": "0.25rem",
+          "space-xl": "2.5rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "gutter-mobile": "1rem",
+          "space-sm": "0.5rem"
+        },
+        "fontFamily": {
+          "label-mono": [
+            "JetBrains Mono"
+          ],
+          "label-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "display-lg": [
+            "Outfit"
+          ],
+          "headline-lg": [
+            "Outfit"
+          ],
+          "headline-md": [
+            "Outfit"
+          ],
+          "headline-sm": [
+            "Outfit"
+          ],
+          "body-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl": [
+            "Outfit"
+          ],
+          "body-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-md": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl-mobile": [
+            "Outfit"
+          ],
+          "display-lg-mobile": [
+            "Outfit"
+          ],
+          "body-md": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "label-mono": [
+            "11px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.06em",
+              "fontWeight": "500"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg": [
+            "56px",
+            {
+              "lineHeight": "64px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg-mobile": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "15px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }
+</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-white"><header class="fixed top-0 left-0 right-0 z-50 bg-[#080c14]/90 backdrop-blur-md border-b border-outline-variant/40"><div class="h-20 w-full px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><a class="flex items-center gap-space-sm group" data-path="home" href="#"><img alt="Ayush Hub Brand Logo" class="h-8 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVVsZ_cU_x3nT6QhJHe5QjvxtZXcBSmbbbygKhqu_cR4Mp1DpgvIVkZbhxwIYaW9n7f8x2kO1muC8kFV88K31DXoCA2nNo6QDxcR0rTChu8LSMrWLPadZdghvwDsyzKY5lEE7i75d3NpWHymjOzpfvacvFw_d50tM3cAfYctEu5jyeJl2vzxD2oxEU6IiD_2TYyb43PqWboslnFfxnRcldxBkPTANHlI9d296JCeEmq-0VF0f37gz3"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight group-hover:text-primary transition-colors">Ayush Hub</span></a></div><nav class="hidden xl:flex items-center gap-1.5 p-1 rounded-full bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/40"><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="services" href="#">Services</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="music" href="#">Music</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="movies" href="#">Movies</a><a aria-current="page" class="px-space-md py-space-xs rounded-full transition-all bg-primary-container text-white font-semibold font-label-md text-label-md shadow-sm shadow-blue-500/20" data-path="gaming" href="#">Gaming</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="about" href="#">About</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="contact" href="#">Contact</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#">Admin</a></nav><div class="flex items-center gap-space-md shrink-0"><a class="hidden md:inline-flex items-center justify-center px-space-lg py-space-xs rounded-full bg-primary-container hover:bg-blue-600 text-white font-semibold font-label-md text-label-md shadow-sm shadow-blue-500/20 hover:shadow-blue-500/30 transition-all" data-path="contact" href="#">Explore Now</a><div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFe990Nc6Yx1Zbq21BV_b3XXFJJkLzJB6GBqtUbp-2RWl-Na1mz-Lb5Q69FGaHgdvqtDtEq6QP3B5VOEdJujb-c6iSJEwODvD_K13zynW2xN9s3PVD7eIcWDLlsGdaN32v3S5f0bpTsVlNOF1u5Jv8T_qwviJe2SuM7YxpTGYq0rgcshN2WFfDZPT31u5ivNTaXalwK2-Fqw4zDjaGKVx1Nai2tmjitzf7hgqXZGtHYVAvkCyWtbd4"><button aria-label="Toggle Menu" class="xl:hidden p-space-xs rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" id="mobile-menu-btn"><span class="material-symbols-outlined text-[26px]">menu</span></button></div></div></div><div class="hidden xl:hidden w-full bg-[#080c14]/98 backdrop-blur-xl border-b border-outline-variant/40 px-margin-mobile py-space-md" id="mobile-menu"><nav class="flex flex-col gap-space-xs"><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="home" href="#">Home</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="services" href="#">Services</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="music" href="#">Music</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="movies" href="#">Movies</a><a aria-current="page" class="px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-white font-semibold font-label-md text-label-md" data-path="gaming" href="#">Gaming</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="about" href="#">About</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="contact" href="#">Contact</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#">Admin</a><div class="pt-space-sm"><a class="flex w-full items-center justify-center px-space-lg py-space-sm rounded-lg bg-primary-container text-white font-semibold font-label-md text-label-md" data-path="contact" href="#">Explore Now</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#">Admin</a></div></nav></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Obsidian Sapphire Backdrop -->
+<div class="relative w-full overflow-hidden px-margin-mobile md:px-margin pb-space-xl pt-space-lg">
+<div class="absolute -top-32 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="absolute top-20 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(37,99,235,0.15),rgba(255,255,255,0))] pointer-events-none"></div>
+<!-- Header Section -->
+<div class="relative z-10 max-w-5xl">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-high/80 text-primary mb-space-md backdrop-blur-md border border-primary/20 text-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-mono text-label-mono uppercase tracking-wider font-semibold">Ayush Arena // Live Session Ready</span>
+</div>
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface tracking-tight mb-space-sm leading-tight">
+        Battleground &amp; Arena: <span class="bg-gradient-to-r from-blue-400 via-indigo-200 to-slate-200 bg-clip-text text-transparent">Gaming Realm</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+        Tactical clutches, Los Santos heists, and battle royale Booyahs. Check out my ranks, setups, and benchmarks.
+      </p>
+<!-- Live Quick Status Strip -->
+<div class="mt-space-lg flex flex-wrap items-center gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container/70 backdrop-blur-md border border-outline-variant/50">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Main Games:</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Valorant • Free Fire MAX • GTA V</span>
+</div>
+<div class="flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container/70 backdrop-blur-md border border-outline-variant/50">
+<span class="material-symbols-outlined text-blue-400 text-[20px]">bolt</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Average Frame Rate:</span>
+<span class="font-body-sm text-body-sm text-primary font-semibold">180+ FPS Fluid</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Game Showcase Section -->
+<section class="w-full px-margin-mobile md:px-margin py-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-sm">
+<div>
+<span class="font-label-mono text-label-mono text-primary tracking-widest uppercase font-semibold">Primary Arenas</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">Dominance Hub &amp; Main Profiles</h2>
+</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+        Displaying 3 active competitive rosters
+      </div>
+</div>
+<!-- Cards Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<!-- Card 1: Valorant -->
+<div class="group relative flex flex-col justify-between rounded-2xl bg-surface-container-low border border-outline-variant/60 hover:border-primary/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-950/30 overflow-hidden">
+<!-- Top Visual Banner with Image Placeholder -->
+<div class="relative h-56 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="High contrast tactical FPS digital concept artwork depicting cyberpunk agents casting vibrant cyan and deep violet energy abilities across a futuristic urban combat site with neon reflections and smoke effects" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtm0-iXik3WlcnTD8HQXLzTYjMTK8sioU-6sV1yIlGH5CtNEmcxaEzwExzPEbqGTtYqO8fiD9CJrQbYDbKjv0KuZOWbhx1fCaAZJUtywQChyQmSP70igID6lqVvFDqDI4ErqspEL7QFHsRyTbW3uawfSViqFfmeAEwDB0cN5WX6sny86SoKlfkdATPNJvAr0gqWYlGC4pUaQo3Vi81-GHhtOVdoWPn2vm7gxr5ZOvnwYbXmZjokOmy')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/50 to-transparent"></div>
+<!-- Rank Badge -->
+<div class="absolute top-space-md left-space-md flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#080c14]/85 backdrop-blur-md text-blue-300 border border-blue-500/30 text-xs font-semibold">
+<span class="material-symbols-outlined text-[16px]">military_tech</span>
+<span class="font-label-mono tracking-wide">ASCENDANT II</span>
+</div>
+<div class="absolute top-space-md right-space-md px-2.5 py-1 rounded-full bg-surface-container-high/80 text-on-surface-variant font-label-mono text-xs border border-white/5">
+            Peak: Immortal
+          </div>
+<div class="absolute bottom-space-sm left-space-md">
+<span class="font-label-mono text-xs text-blue-400 uppercase tracking-wider font-semibold">Tactical 5v5</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Valorant</h3>
+</div>
+</div>
+<!-- Content Body -->
+<div class="p-space-md md:p-space-lg flex-1 flex flex-col justify-between">
+<div class="space-y-space-md">
+<!-- Mains / Roles -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between border border-outline-variant/40">
+<span class="font-label-md text-label-md text-on-surface-variant">Signature Mains</span>
+<span class="font-body-md text-on-surface font-semibold">Sova &amp; Reyna</span>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-3 gap-2 text-center py-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant/40">
+<p class="font-headline-sm text-headline-sm text-blue-400 font-bold">1.34</p>
+<p class="font-label-mono text-xs text-on-surface-variant mt-1">K/D Ratio</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant/40">
+<p class="font-headline-sm text-headline-sm text-slate-200 font-bold">26.8%</p>
+<p class="font-label-mono text-xs text-on-surface-variant mt-1">Headshot %</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant/40">
+<p class="font-headline-sm text-headline-sm text-slate-200 font-bold">180+</p>
+<p class="font-label-mono text-xs text-on-surface-variant mt-1">Comp Wins</p>
+</div>
+</div>
+<!-- Benchmark pill -->
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm pt-space-xs">
+<span class="material-symbols-outlined text-blue-400 text-[18px]">speed</span>
+<span class="">240+ FPS locked @ 1440p High</span>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-space-lg mt-space-sm">
+<a class="w-full inline-flex items-center justify-center gap-space-xs py-2.5 px-space-md rounded-xl bg-surface-container hover:bg-primary-container text-on-surface hover:text-white border border-outline-variant/60 hover:border-transparent transition-all font-label-md text-label-md font-semibold" href="#">
+              View Match History &amp; Clips
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 2: Free Fire MAX -->
+<div class="group relative flex flex-col justify-between rounded-2xl bg-surface-container-low border border-outline-variant/60 hover:border-primary/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-950/30 overflow-hidden">
+<!-- Top Visual Banner with Image Placeholder -->
+<div class="relative h-56 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Dramatic dynamic survival battle royale hero in customized techwear armor firing dual weapon attachments across an illuminated industrial zone bathed in fiery orange and ultraviolet stadium floodlights" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDG7010UvW1dCgUqauhVqeor2zZE4uu_pO7EigLreY3cOXHR1_1i1o13T_YXSM0zdsiK-mgrlToSnLeTydQYS1cfngXgEAIaZLrU5jSsv4TcPblyVvW7STTveSDznN9HGtN_5gzSbXbTButw4AdBp9TAKFPfLCEIUfPUn7PLIXBQSzJecNHHTU6fLUhsMnB0Ylz2Zg1jVxRYVN6Fw4_U_OX-r0YXijvtc2tu-jxg0RhHo9k9Xp4K_bL')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/50 to-transparent"></div>
+<!-- Rank Badge -->
+<div class="absolute top-space-md left-space-md flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#080c14]/85 backdrop-blur-md text-blue-300 border border-blue-500/30 text-xs font-semibold">
+<span class="material-symbols-outlined text-[16px]">workspace_premium</span>
+<span class="font-label-mono tracking-wide">GRANDMASTER</span>
+</div>
+<div class="absolute top-space-md right-space-md px-2.5 py-1 rounded-full bg-surface-container-high/80 text-on-surface-variant font-label-mono text-xs border border-white/5">
+            Heroic Tier IV
+          </div>
+<div class="absolute bottom-space-sm left-space-md">
+<span class="font-label-mono text-xs text-blue-400 uppercase tracking-wider font-semibold">Battle Royale Mobile</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Free Fire MAX</h3>
+</div>
+</div>
+<!-- Content Body -->
+<div class="p-space-md md:p-space-lg flex-1 flex flex-col justify-between">
+<div class="space-y-space-md">
+<!-- Mains / Playstyle -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between border border-outline-variant/40">
+<span class="font-label-md text-label-md text-on-surface-variant">Combat Style</span>
+<span class="font-body-md text-on-surface font-semibold">Rush &amp; Aggressive Sniper</span>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-3 gap-2 text-center py-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant/40">
+<p class="font-headline-sm text-headline-sm text-blue-400 font-bold">68%</p>
+<p class="font-label-mono text-xs text-on-surface-variant mt-1">Clash Squad WR</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant/40">
+<p class="font-headline-sm text-headline-sm text-slate-200 font-bold">4.20</p>
+<p class="font-label-mono text-xs text-on-surface-variant mt-1">Squad K/D</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant/40">
+<p class="font-headline-sm text-headline-sm text-slate-200 font-bold">1,200+</p>
+<p class="font-label-mono text-xs text-on-surface-variant mt-1">Booyahs</p>
+</div>
+</div>
+<!-- Benchmark / Device pill -->
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm pt-space-xs">
+<span class="material-symbols-outlined text-blue-400 text-[18px]">devices</span>
+<span class="">Rog Phone &amp; iPad Pro 120Hz Config</span>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-space-lg mt-space-sm">
+<a class="w-full inline-flex items-center justify-center gap-space-xs py-2.5 px-space-md rounded-xl bg-surface-container hover:bg-primary-container text-on-surface hover:text-white border border-outline-variant/60 hover:border-transparent transition-all font-label-md text-label-md font-semibold" href="#">
+              Inspect Loadout &amp; Sensitivity
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 3: GTA 5 & FiveM -->
+<div class="group relative flex flex-col justify-between rounded-2xl bg-surface-container-low border border-outline-variant/60 hover:border-primary/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-950/30 overflow-hidden">
+<!-- Top Visual Banner with Image Placeholder -->
+<div class="relative h-56 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Los Santos downtown night boulevard with high-end customized sports cars, glistening wet asphalt reflections, neon skyline billboards, palm silhouette, cinematic crime sandbox vibe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-VAXPkIAW6pnPoli-klAZIVjKqNUrTnduwNon0Nh4scj3ttjDVp7beWG3JRHAySPYkjk1RaLG_y1nm4sTxNEmAv-IdDgkEDjJB0zQhxNPwnH-3N_BB6guWlZKrDpz27Ff5thmdoqlTymB9Lochor-f4su9tNwNawSX2S1gMDMNYqo9fyMD-reEQxA7_vFg--kNCD8WgbA62Ac4QUEh_0KGj81y2F1mFZZ_kwj0sbPFXJ_4EU_1ayQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/50 to-transparent"></div>
+<!-- Rank Badge -->
+<div class="absolute top-space-md left-space-md flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#080c14]/85 backdrop-blur-md text-blue-300 border border-blue-500/30 text-xs font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-mono tracking-wide">MASTERMIND</span>
+</div>
+<div class="absolute top-space-md right-space-md px-2.5 py-1 rounded-full bg-surface-container-high/80 text-on-surface-variant font-label-mono text-xs border border-white/5">
+            FiveM RP Active
+          </div>
+<div class="absolute bottom-space-sm left-space-md">
+<span class="font-label-mono text-xs text-blue-400 uppercase tracking-wider font-semibold">Open World Sandbox</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">GTA 5 &amp; FiveM</h3>
+</div>
+</div>
+<!-- Content Body -->
+<div class="p-space-md md:p-space-lg flex-1 flex flex-col justify-between">
+<div class="space-y-space-md">
+<!-- Mains / Modes -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between border border-outline-variant/40">
+<span class="font-label-md text-label-md text-on-surface-variant">Focus Modes</span>
+<span class="font-body-md text-on-surface font-semibold">Los Santos RP &amp; Heists</span>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-3 gap-2 text-center py-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant/40">
+<p class="font-headline-sm text-headline-sm text-blue-400 font-bold">$85M+</p>
+<p class="font-label-mono text-xs text-on-surface-variant mt-1">Net Worth</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant/40">
+<p class="font-headline-sm text-headline-sm text-slate-200 font-bold">All 5</p>
+<p class="font-label-mono text-xs text-on-surface-variant mt-1">Heists Done</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant/40">
+<p class="font-headline-sm text-headline-sm text-slate-200 font-bold">42</p>
+<p class="font-label-mono text-xs text-on-surface-variant mt-1">Garage Fleet</p>
+</div>
+</div>
+<!-- Benchmark pill -->
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm pt-space-xs">
+<span class="material-symbols-outlined text-blue-400 text-[18px]">monitor</span>
+<span class="">140 FPS @ 4K Ultra w/ Ray Tracing</span>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-space-lg mt-space-sm">
+<a class="w-full inline-flex items-center justify-center gap-space-xs py-2.5 px-space-md rounded-xl bg-surface-container hover:bg-primary-container text-on-surface hover:text-white border border-outline-variant/60 hover:border-transparent transition-all font-label-md text-label-md font-semibold" href="#">
+              View Custom Cars &amp; Clips
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Battle Station Rig & Performance Section -->
+<section class="w-full px-margin-mobile md:px-margin py-space-xl">
+<div class="rounded-3xl bg-surface-container-low border border-outline-variant/50 p-space-md md:p-space-xl relative overflow-hidden">
+<!-- Subtle ambient glow inside card -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute -left-20 -top-20 w-80 h-80 bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center relative z-10">
+<!-- Left Column: Rig Overview & Discord Action -->
+<div class="lg:col-span-5 space-y-space-md">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-surface-container text-primary border border-primary/25 font-label-mono text-xs font-semibold">
+<span class="material-symbols-outlined text-[16px]">developer_board</span>
+            HARDWARE BENCHMARK SUITE
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">
+            Ayush's Battle Station Specs
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Engineered exclusively for low latency, buttery smooth 240Hz competitive response times, and 4K ultra cinematic ray-traced rendering.
+          </p>
+<!-- Interactive Connect Section -->
+<div class="pt-space-sm space-y-space-sm">
+<div class="p-space-md rounded-2xl bg-surface-container flex flex-col sm:flex-row items-center justify-between gap-space-md border border-outline-variant/40">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined text-[24px]">headset_mic</span>
+</div>
+<span class="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full ring-2 ring-surface-container"></span>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Voice Lobby: Online</h4>
+<p class="font-body-sm text-body-sm text-primary">Ready for Scrims &amp; Heists</p>
+</div>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-2.5 rounded-xl bg-primary-container hover:bg-blue-600 text-white font-semibold font-label-md text-label-md shadow-sm transition-all" id="discord-squad-btn">
+<span class="material-symbols-outlined text-[18px]">group_add</span>
+                Join My Discord Squad
+              </button>
+</div>
+<p class="hidden text-center sm:text-left text-primary font-label-sm text-label-sm pl-space-xs transition-opacity font-semibold" id="discord-toast">
+              ✓ Discord invite link copied to clipboard &amp; ready to launch!
+            </p>
+</div>
+</div>
+<!-- Right Column: Specs Cards Bento -->
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Spec 1: CPU -->
+<div class="p-space-md rounded-2xl bg-surface-container/80 hover:bg-surface-container transition-all border border-outline-variant/50 hover:border-primary/50">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">memory</span>
+<span class="font-label-mono text-xs text-on-surface-variant font-semibold uppercase tracking-wider">PROCESSOR</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">AMD Ryzen 7 7800X3D</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">8-Core / 16-Thread with 3D V-Cache, peak gaming framerates</p>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-mono text-xs">
+<span class="text-blue-400 font-semibold">5.0 GHz Turbo</span>
+<span class="">58°C Under Load</span>
+</div>
+</div>
+<!-- Spec 2: GPU -->
+<div class="p-space-md rounded-2xl bg-surface-container/80 hover:bg-surface-container transition-all border border-outline-variant/50 hover:border-primary/50">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">videogame_asset</span>
+<span class="font-label-mono text-xs text-on-surface-variant font-semibold uppercase tracking-wider">GRAPHICS</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">RTX 4080 Super 16GB</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Ada Lovelace architecture, DLSS 3 frame generation &amp; ray tracing</p>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-mono text-xs">
+<span class="text-blue-400 font-semibold">16GB GDDR6X</span>
+<span class="">4K Ready</span>
+</div>
+</div>
+<!-- Spec 3: RAM -->
+<div class="p-space-md rounded-2xl bg-surface-container/80 hover:bg-surface-container transition-all border border-outline-variant/50 hover:border-primary/50">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">storage</span>
+<span class="font-label-mono text-xs text-on-surface-variant font-semibold uppercase tracking-wider">MEMORY</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">32GB DDR5 6000MHz</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Dual-channel RGB low latency CL30 profile for zero hitching</p>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-mono text-xs">
+<span class="text-blue-400 font-semibold">CL30 Timings</span>
+<span class="">96 GB/s</span>
+</div>
+</div>
+<!-- Spec 4: Monitor -->
+<div class="p-space-md rounded-2xl bg-surface-container/80 hover:bg-surface-container transition-all border border-outline-variant/50 hover:border-primary/50">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">tv</span>
+<span class="font-label-mono text-xs text-on-surface-variant font-semibold uppercase tracking-wider">DISPLAY</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">240Hz 1440p Fast IPS OLED</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">0.03ms true GtG pixel reaction, G-Sync Certified for ghost-free aim</p>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-mono text-xs">
+<span class="text-blue-400 font-semibold">240Hz Pure</span>
+<span class="">True Black 400</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Highlight Clips & Highlights Reel -->
+<section class="w-full px-margin-mobile md:px-margin pb-space-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-space-md gap-space-xs">
+<div>
+<span class="font-label-mono text-label-mono text-primary tracking-widest uppercase font-semibold">Vault</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Pinned Gameplay Moments</h3>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Previous clips" class="w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high hover:text-on-surface border border-outline-variant/40 transition-all">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button aria-label="Next clips" class="w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high hover:text-on-surface border border-outline-variant/40 transition-all">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Clips Strip -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="group relative rounded-2xl overflow-hidden bg-surface-container-low aspect-video flex items-end p-space-md cursor-pointer border border-outline-variant/50 hover:border-primary/50 transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Valorant Ascent B-site 1 versus 4 clutch with Reyna empress mode activated and glowing purple soul orbs on high definition esports stage broadcast" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBgTfbseEatK1JmTDVkBydHXn4ghQ3ApMoE3l4SwGqbT5H16QiVy7m7eH5bmB-_pm_wNqbcpnrl1H5r-3pvH32bd-hRD9sv5rSjpNDt8AeskRO7CDdsw9FmO1UQh7LrYTCT-v8gmIE_krf5NEpon2XCq8GNX5wF9bKKsujIKjpQI7ArikhvA0pnw89j7LOaNl-pOGx6-pF-90uA6JmL9XT8OoG456r6eUPwH2cqMEPUfpl-Ansge97E')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#080c14] via-[#080c14]/50 to-transparent"></div>
+<div class="relative z-10 w-full flex items-center justify-between">
+<div>
+<span class="font-label-mono text-xs text-blue-400 uppercase font-semibold">Valorant • Ascent</span>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">1v4 Overtime Clutch</h4>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high/90 backdrop-blur-md flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-all border border-outline-variant/40">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden bg-surface-container-low aspect-video flex items-end p-space-md cursor-pointer border border-outline-variant/50 hover:border-primary/50 transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Free Fire final circle intense sniper duel on Bermuda clocktower with smoke grenades deployed and orange victory notification trigger" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCsoRoPPEVPArGfaW3f8U3QxWCZFno0PQZUoW2spTQG7-Utl7Vx-DsI8CHGASKY0jmKXvFyNdQbBGA81h59NrkiHApddfqGAqRpR6gLuci6HBMjwxKy2NNuwquongo-2bclXEYcWkhKkvqJdvYj_54xtIPKdGG6-1cV0ZDzjsyL4_kt57d1t6TEeH3JahdqgAx3MQIQo9y_pM1HqQMzN6hMFQDfxd2vcCUVA3yx1l9RDfq2XhU0aGxQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#080c14] via-[#080c14]/50 to-transparent"></div>
+<div class="relative z-10 w-full flex items-center justify-between">
+<div>
+<span class="font-label-mono text-xs text-blue-400 uppercase font-semibold">Free Fire • Bermuda</span>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">AWM 360 Trickshot Booyah</h4>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high/90 backdrop-blur-md flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-all border border-outline-variant/40">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden bg-surface-container-low aspect-video flex items-end p-space-md cursor-pointer border border-outline-variant/50 hover:border-primary/50 transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Grand Theft Auto Online helicopter escape through Maze Bank towers during twilight rainy weather with police searchlights below" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB15RMOK-qjyDlRYuIv4kr2HntvAwYUm_vbB1xrjwi8RtpTLlwG4_AneZL987vbfvFnwJ6ocEBObWn5m6ww5acE4FSkoK9Lmd2igZnt6KYONKeIwfbIo5Tv7Mf7xaos2-oVbxNrczwSvIhh5-Y8WSDMttxD9rFa7BOHHqoj1-J5mZ24RTFRq57c8hM3N5p5jNm1i2Qx57k6B8upxSaczKTI2gKosWFVBuIVDHQ_IUtDWgq_rVC5YBGS')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#080c14] via-[#080c14]/50 to-transparent"></div>
+<div class="relative z-10 w-full flex items-center justify-between">
+<div>
+<span class="font-label-mono text-xs text-blue-400 uppercase font-semibold">GTA V • Pacific Standard</span>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Flawless Elite Challenge Run</h4>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high/90 backdrop-blur-md flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-all border border-outline-variant/40">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  (function() {
+    const discordBtn = document.getElementById('discord-squad-btn');
+    const toast = document.getElementById('discord-toast');
+    if (discordBtn && toast) {
+      discordBtn.addEventListener('click', () => {
+        toast.classList.remove('hidden');
+        toast.textContent = 'Copied AyushHub#0001 discord squad tag!';
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 4000);
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-[#080c14] border-t border-outline-variant/30 pt-space-xl pb-space-lg"><div class="w-full px-margin-mobile md:px-margin"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-xl mb-space-xl"><div class="space-y-space-md"><div class="flex items-center gap-space-sm"><img alt="Ayush Hub Brand Logo" class="h-8 w-auto object-contain opacity-95" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVVsZ_cU_x3nT6QhJHe5QjvxtZXcBSmbbbygKhqu_cR4Mp1DpgvIVkZbhxwIYaW9n7f8x2kO1muC8kFV88K31DXoCA2nNo6QDxcR0rTChu8LSMrWLPadZdghvwDsyzKY5lEE7i75d3NpWHymjOzpfvacvFw_d50tM3cAfYctEu5jyeJl2vzxD2oxEU6IiD_2TYyb43PqWboslnFfxnRcldxBkPTANHlI9d296JCeEmq-0VF0f37gz3"><span class="font-headline-sm text-headline-sm text-on-surface">Ayush Hub</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">A premium entertainment destination uniting hi-res audio streaming, curated cinema viewing, and competitive gaming lobbies.</p></div><div><h4 class="font-body-lg text-body-lg text-on-surface font-semibold mb-space-md">Quick Links</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><li class="list-none"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a></li><li class="list-none"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="services" href="#">Services</a></li><li class="list-none"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="about" href="#">About</a></li><li class="list-none"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="contact" href="#">Contact</a></li><li class="list-none"><a class="inline-flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors" data-path="admin" href="#"><span class="">Admin Control Panel</span><span class="px-1.5 py-0.5 rounded text-[10px] font-label-mono bg-primary/10 text-primary border border-primary/20 uppercase tracking-wider font-semibold">Admin</span></a></li></ul></div><div><h4 class="font-body-lg text-body-lg text-on-surface font-semibold mb-space-md">Entertainment</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><li class="list-none"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="music" href="#">Music Lounge</a></li><li class="list-none"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="movies" href="#">Cinema Stills</a></li><li class="list-none"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="gaming" href="#">Gaming Arenas</a></li><li class="list-none"><a class="inline-flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors" data-path="admin" href="#"><span class="">Admin Control Panel</span><span class="px-1.5 py-0.5 rounded text-[10px] font-label-mono bg-primary/10 text-primary border border-primary/20 uppercase tracking-wider font-semibold">Admin</span></a></li></ul></div><div><h4 class="font-body-lg text-body-lg text-on-surface font-semibold mb-space-md">Connect</h4><div class="flex items-center gap-space-sm"><a aria-label="Instagram" class="w-10 h-10 rounded-xl bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/40 transition-all" href="#"><span class="material-symbols-outlined text-[20px]">photo_camera</span></a><a aria-label="YouTube" class="w-10 h-10 rounded-xl bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/40 transition-all" href="#"><span class="material-symbols-outlined text-[20px]">smart_display</span></a><a aria-label="Discord" class="w-10 h-10 rounded-xl bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/40 transition-all" href="#"><span class="material-symbols-outlined text-[20px]">headset_mic</span></a><a aria-label="WhatsApp" class="w-10 h-10 rounded-xl bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/40 transition-all" href="#"><span class="material-symbols-outlined text-[20px]">chat</span></a></div><p class="mt-space-md font-label-mono text-xs text-on-surface-variant">Made with React &amp; Vue</p></div></div><div class="border-t border-outline-variant/20 pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant"><p class="">© 2025 Ayush Hub. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-1.5 text-on-surface-variant text-xs"><span class="w-2 h-2 rounded-full bg-emerald-400"></span>Online Platform Active</span></div></div></div></footer><script>const btn=document.getElementById('mobile-menu-btn');const menu=document.getElementById('mobile-menu');if(btn&&menu){btn.addEventListener('click',()=>{menu.classList.toggle('hidden');});}</script>
+
+</body></html>

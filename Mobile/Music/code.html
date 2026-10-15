@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;family=Outfit:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'on-tertiary-fixed-variant': '#005236', 'inverse-on-surface': '#2c3039', 'surface-tint': '#b4c5ff', 'inverse-surface': '#dfe2ee', 'primary-container': '#2563eb', 'tertiary-fixed': '#6ffbbe', 'on-tertiary-fixed': '#002113', 'on-primary-fixed-variant': '#003ea8', 'on-secondary-fixed': '#07006c', 'primary': '#b4c5ff', 'on-surface-variant': '#c3c6d7', 'outline-variant': '#434655', 'outline': '#8d90a0', 'primary-fixed': '#dbe1ff', 'secondary': '#c0c1ff', 'on-primary': '#002a78', 'surface-container': '#1c2028', 'on-secondary': '#1000a9', 'surface-dim': '#0f131c', 'on-secondary-container': '#b0b2ff', 'primary-fixed-dim': '#b4c5ff', 'surface-container-highest': '#31353e', 'on-secondary-fixed-variant': '#2f2ebe', 'secondary-fixed': '#e1e0ff', 'secondary-fixed-dim': '#c0c1ff', 'surface-variant': '#31353e', 'surface': '#0f131c', 'surface-bright': '#353942', 'error-container': '#93000a', 'on-tertiary-container': '#bdffdb', 'secondary-container': '#3131c0', 'tertiary': '#4edea3', 'surface-container-high': '#262a33', 'on-background': '#dfe2ee', 'on-primary-container': '#eeefff', 'on-error-container': '#ffdad6', 'tertiary-container': '#007d55', 'error': '#ffb4ab', 'background': '#0f131c', 'on-tertiary': '#003824', 'surface-container-lowest': '#0a0e16', 'surface-container-low': '#181c24', 'inverse-primary': '#0053db', 'on-primary-fixed': '#00174b', 'on-surface': '#dfe2ee', 'on-error': '#690005', 'tertiary-fixed-dim': '#4edea3' }, borderRadius: { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, spacing: { 'space-xl': '2.5rem', 'margin': '2.5rem', 'space-sm': '0.5rem', 'gutter-mobile': '1rem', 'space-md': '1rem', 'space-lg': '1.5rem', 'space-xs': '0.25rem', 'gutter': '1.5rem', 'margin-mobile': '1.25rem' }, fontFamily: { 'display-lg-mobile': ['Outfit'], 'headline-lg': ['Outfit'], 'display-lg': ['Outfit'], 'headline-xl': ['Outfit'], 'label-lg': ['Plus Jakarta Sans'], 'body-sm': ['Plus Jakarta Sans'], 'headline-xl-mobile': ['Outfit'], 'label-mono': ['JetBrains Mono'], 'headline-md': ['Outfit'], 'body-md': ['Plus Jakarta Sans'], 'headline-sm': ['Outfit'], 'body-lg': ['Plus Jakarta Sans'], 'label-md': ['Plus Jakarta Sans'] }, fontSize: { 'display-lg-mobile': ['36px', { lineHeight: '44px', letterSpacing: '-0.02em', fontWeight: '600' }], 'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '-0.01em', fontWeight: '500' }], 'display-lg': ['56px', { lineHeight: '64px', letterSpacing: '-0.02em', fontWeight: '600' }], 'headline-xl': ['40px', { lineHeight: '48px', letterSpacing: '-0.02em', fontWeight: '600' }], 'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.01em', fontWeight: '600' }], 'body-sm': ['13px', { lineHeight: '20px', fontWeight: '400' }], 'headline-xl-mobile': ['28px', { lineHeight: '36px', letterSpacing: '-0.01em', fontWeight: '600' }], 'label-mono': ['11px', { lineHeight: '16px', letterSpacing: '0.06em', fontWeight: '500' }], 'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '-0.01em', fontWeight: '500' }], 'body-md': ['15px', { lineHeight: '24px', fontWeight: '400' }], 'headline-sm': ['20px', { lineHeight: '28px', fontWeight: '500' }], 'body-lg': ['18px', { lineHeight: '28px', fontWeight: '400' }], 'label-md': ['12px', { lineHeight: '16px', fontWeight: '500' }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#0f131c;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Circular glowing emblem combining headphones, movie clapperboard, and gaming controller with neon purple and cyan illumination on dark blue #0A1A3C background" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UZ75GM8FIe4HrIwyjwOYLy8Z4LHmPv1rYAfZUSebDUUH9lkjonaOrkH-lcuJ2MgwY0gXSNIVIaT11d2j1yn5hcXxRX_pk92dXqcLxvmjNkDS6T_EHzdH3J1E7FuafeqT5g54RicLwGpQs-EUUdv_KMQnlxU7328zdBBvV8W4ecFJkkVxd-tlvLmniTVBPC0EFetKCLjNfZ8QblUfNdiAwXqK5o2m2lS6vROIF9PAfTsqiMtCSVoDgOkQ"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Ayush Hub</span><span class="px-1.5 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-mono text-label-mono uppercase tracking-wider flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>PRO</span></div><span class="font-label-md text-label-md text-on-surface-variant font-medium">Music</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Menu" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors rounded-full active:bg-surface-container-high"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin-mobile pb-28 gap-space-lg select-none">
+<!-- Top Audio Lounge Header & Live EQ Banner -->
+<section class="relative w-full rounded-xl bg-surface-container-low p-space-md shadow-xl overflow-hidden mt-space-sm">
+<!-- Ambient Sapphire Glow Layer -->
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-8 -left-8 w-36 h-36 bg-tertiary-container/15 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-label-mono text-label-mono text-tertiary uppercase tracking-wider">Hi-Fi Studio Session</span>
+</div>
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded-full bg-surface-container-highest text-primary">24-Bit / 96kHz</span>
+</div>
+<div class="flex flex-col">
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface font-semibold tracking-tight">
+          Vibe &amp; Rhythm
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Bollywood &amp; Punjabi • Spatial Audio Lab
+        </p>
+</div>
+<!-- Live Dynamic EQ Visualizer -->
+<div class="mt-space-xs p-space-sm rounded-lg bg-surface-container/90 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Dolby Atmos Synced</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">120+ Curated Bangers</span>
+</div>
+</div>
+<!-- Animated Wave Bars -->
+<div class="flex items-end gap-1 h-6 pr-1" id="eqVisualizer">
+<span class="w-1 bg-primary rounded-full h-3 animate-pulse" style="animation-duration: 480ms;"></span>
+<span class="w-1 bg-secondary rounded-full h-5 animate-pulse" style="animation-duration: 320ms; animation-delay: 100ms;"></span>
+<span class="w-1 bg-tertiary rounded-full h-2 animate-pulse" style="animation-duration: 650ms; animation-delay: 200ms;"></span>
+<span class="w-1 bg-primary rounded-full h-6 animate-pulse" style="animation-duration: 410ms; animation-delay: 50ms;"></span>
+<span class="w-1 bg-primary-fixed-dim rounded-full h-4 animate-pulse" style="animation-duration: 520ms; animation-delay: 150ms;"></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter Pills / Categories -->
+<section class="w-full">
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1 -mx-margin-mobile px-margin-mobile">
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold shadow-md shadow-primary-container/25 transition-all">
+        All Tracks
+      </button>
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface active:bg-surface-bright font-label-md text-label-md font-medium transition-all">
+        Punjabi Hits
+      </button>
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface active:bg-surface-bright font-label-md text-label-md font-medium transition-all">
+        Bollywood Romance
+      </button>
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface active:bg-surface-bright font-label-md text-label-md font-medium transition-all">
+        Gym Hype
+      </button>
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface active:bg-surface-bright font-label-md text-label-md font-medium transition-all">
+        Indie Desi
+      </button>
+</div>
+</section>
+<!-- Featured Soundscapes (Horizontal Swipeable Carousel) -->
+<section class="flex flex-col gap-space-sm w-full">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">album</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Featured Soundscapes</h2>
+</div>
+<span class="font-label-mono text-label-mono text-primary font-medium tracking-wide">SWIPE →</span>
+</div>
+<div class="flex gap-space-md overflow-x-auto no-scrollbar -mx-margin-mobile px-margin-mobile pb-2 pt-1">
+<!-- Card 1 -->
+<div class="soundscape-card shrink-0 w-64 rounded-xl bg-surface-container p-space-md flex flex-col justify-between relative overflow-hidden shadow-lg group">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent z-10 pointer-events-none"></div>
+<img alt="Dhol drops art" class="absolute inset-0 w-full h-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-500" data-alt="Vibrant nighttime Punjabi concert with stage laser beams in deep neon indigo, pulsing purple smoke, crowd hands raised, high contrast cinematic photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkUTCnyCs_q3uQ8nzXz3DwEdhCI4gYh4JXGhKopt1oyShrsR7IYZaVyINcnkuA61arbUf5PepsNDYEyWQDfWspz6LeOXQeq45yg66B6zdcgthK-htLWynvx2smZHGWn5EO5BEBvrGIY1KyunRDhDBGDxemxEqzupYg1kwRnbhfj4dGuhuPJCjL5TbO9GxCbljYYavS6uTwv-q0tIpjV6QyLbKQaURow-uyh2J1dnXpSR0NZzIg-7TU"/>
+<div class="relative z-20 flex justify-between items-start">
+<span class="px-2 py-0.5 rounded bg-surface-dim/80 backdrop-blur-md text-tertiary font-label-mono text-label-mono">132 BPM</span>
+<button aria-label="Play Playlist" class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg shadow-primary-container/30 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="relative z-20 mt-16 flex flex-col">
+<span class="font-label-mono text-label-mono text-secondary-fixed-dim uppercase tracking-wider">Heavy Bass Mix</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Desi Bass &amp; Dhol Drops</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Diljit, Sidhu, Karan Aujla</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="soundscape-card shrink-0 w-64 rounded-xl bg-surface-container p-space-md flex flex-col justify-between relative overflow-hidden shadow-lg group">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent z-10 pointer-events-none"></div>
+<img alt="Melodies art" class="absolute inset-0 w-full h-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-500" data-alt="Moody cinematic rain illuminated by golden amber streetlamps and soft blue neon reflection, warm bokeh, vinyl aesthetic music concept" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx1ZVD8XGAjpIaoXIATTEsxGYM1JpBrv3xBHH-SyX8EeueOph72OY4FKExBiaxk9RSQh8TfsMDy1_0VnLQy762V51BixIXP0ol2cDUjokVf0GN_IE5v-NFdXHiegGOpOHDbjXXwVPFUWYH6ZWgI6yRBwaviNTJUhL_8mCl2zMvv0UV2-iXZOyQQ0PObCYELHAqvg75Bh79rUPqw86-YnFtIYWPM-t3vMa-YjSjwiZPsF8yHqgkQGqL"/>
+<div class="relative z-20 flex justify-between items-start">
+<span class="px-2 py-0.5 rounded bg-surface-dim/80 backdrop-blur-md text-primary font-label-mono text-label-mono">Acoustic FLAC</span>
+<button aria-label="Play Playlist" class="w-9 h-9 rounded-full bg-surface-bright text-on-surface flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="relative z-20 mt-16 flex flex-col">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-wider">Midnight Strings</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Soulful Bollywood Melodies</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Arijit, Pritam, Mohit Chauhan</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="soundscape-card shrink-0 w-64 rounded-xl bg-surface-container p-space-md flex flex-col justify-between relative overflow-hidden shadow-lg group">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent z-10 pointer-events-none"></div>
+<img alt="Weekly Playlist art" class="absolute inset-0 w-full h-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic audio studio console mixer glowing with emerald dials, cyan telemetry gauges, and luxury metallic faders in dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1nPOqAK_uTYWmjeSCtJaUb81L6PpoABNrhbZo6powJy6KzLyAyOLPOsAigaQxPmvLz-O2PqP2nKevEYYATbeBkI6wt2FdhY5fYjVR28S6IMeDWNxq24cg6KDa4-EIOK3sCjyT88hc_Gwy8_H07LkfMzmF0oq6zl7OJYO8XXH-s26_vhzKwUsMbg27tsNfFYL_Mj78IXKQaq9I9t6p9n7i4Gs7mYNbml5GWgzjL8yQ35eo8pmyJ1br"/>
+<div class="relative z-20 flex justify-between items-start">
+<span class="px-2 py-0.5 rounded bg-surface-dim/80 backdrop-blur-md text-tertiary-fixed font-label-mono text-label-mono">Curated Daily</span>
+<button aria-label="Play Playlist" class="w-9 h-9 rounded-full bg-surface-bright text-on-surface flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="relative z-20 mt-16 flex flex-col">
+<span class="font-label-mono text-label-mono text-tertiary uppercase tracking-wider">Editorial Choice</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Ayush Weekly Selection</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Top 40 chart-toppers &amp; indie gems</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Heavy Rotation Track List -->
+<section class="flex flex-col gap-space-sm w-full">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">local_fire_department</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Heavy Rotation</h2>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">6 Hot Bangers</span>
+</div>
+<!-- Tracks Container -->
+<div class="flex flex-col gap-space-xs w-full">
+<!-- Track 1: Born to Shine -->
+<div class="track-row group flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer shadow-sm active:bg-surface-container-high" data-artist="Diljit Dosanjh" data-duration="3:32" data-track="Born to Shine">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-surface-container-highest">
+<img alt="Born to Shine" class="w-full h-full object-cover" data-alt="Album cover art featuring charismatic Punjabi superstar Diljit Dosanjh with sleek stylish streetwear against dark cobalt studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxjl4_YTw265wLeGWwPY6gwWHFlsrLVE682ERS7GnGVdiuXZ3MzdLeupuMdoZ2fzmfU2hoLIVMnDelZhbtf_yJVD4tiUWV16Vjcl-0ja3UBWmGxtYJVcdy1OPAZPg2NHquPzOjDIwYMtVtcsJgp9UEdrhQmu5kUQY6WoQRriza563qsq0ow06LzgWAesgTJhHh347W9S9zh3BiaP5top7HYjGaDwoaLKIWgNXvBoTlJHr6xSF-cZiC"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-[20px]">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Born to Shine</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Diljit Dosanjh</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-surface-container-high text-primary">102 BPM</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">3:32</span>
+<button aria-label="Play Born to Shine" class="track-play-btn w-9 h-9 rounded-full bg-surface-container-highest hover:bg-primary hover:text-on-primary flex items-center justify-center text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Track 2: Kesariya -->
+<div class="track-row group flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer shadow-sm active:bg-surface-container-high" data-artist="Arijit Singh" data-duration="4:28" data-track="Kesariya">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-surface-container-highest">
+<img alt="Kesariya" class="w-full h-full object-cover" data-alt="Cinematic romantic scene on the ghats of Varanasi at twilight with saffron marigolds, soft golden light on river water, romantic aura" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHy-Ls27rRodvVfNw1LkslQklQlLbf4h2oKL-2sF5uN106D3az-2RmHbUtlnG1kA_cFiUONhxkv0O9GyYZ1oJwaIvktR7RbKznwIO5hXqTNp_bTlGx1EqOgYH05GgaJNzCMA-MJzRyKJTr-E2ouVtbS0Wj8Av2yMNi9Qa-qKEtfdD-NCpASJSDRpoNsGeNnS9t52PG8MJ7KrQ3xLDTBpLb2fB9CGHkEguv8wJ3lUIsTw8Lb-NeDa6l"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-[20px]">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Kesariya</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Arijit Singh, Pritam</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">88 BPM</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">4:28</span>
+<button aria-label="Play Kesariya" class="track-play-btn w-9 h-9 rounded-full bg-surface-container-highest hover:bg-primary hover:text-on-primary flex items-center justify-center text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Track 3: Softly -->
+<div class="track-row group flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer shadow-sm active:bg-surface-container-high" data-artist="Karan Aujla" data-duration="2:36" data-track="Softly">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-surface-container-highest">
+<img alt="Softly" class="w-full h-full object-cover" data-alt="Minimalist modern typography artwork with subtle luxury chrome metallic textures and dark velvet gradient background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAriBl1xOanFrA-35qSHqbK9TMAAJhyYYO1CqDy0qtkAMximtdYdgF67Z8yCnnVGh1ywaRAyuL5IhxBrrKzkBLYTfX-ZSsTDidFbAIpEY0gKD-fbIrNsB2aXsWnpEzFB8PgenVJNsPLaSrTJOKmukelTwnElN9ojdcNb1Gt8IeNnlWDfZ11uemxqRrenEL0gMnQQDW0Feq-gLfgT9sd4h56A2YleUv7kxUCoXHLZ5WXD9HJ-sfNV97n"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-[20px]">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Softly</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Karan Aujla, Ikky</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-surface-container-high text-tertiary">118 BPM</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">2:36</span>
+<button aria-label="Play Softly" class="track-play-btn w-9 h-9 rounded-full bg-surface-container-highest hover:bg-primary hover:text-on-primary flex items-center justify-center text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Track 4: Apna Bana Le (Currently Active in Mini-Player) -->
+<div class="track-row group flex items-center justify-between p-space-sm rounded-xl bg-surface-container-high shadow-md cursor-pointer active:bg-surface-bright" data-artist="Arijit Singh" data-duration="4:21" data-track="Apna Bana Le">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-surface-container-highest">
+<img alt="Apna Bana Le" class="w-full h-full object-cover" data-alt="Romantic twilight in a foggy hill station pine forest with starry midnight sky and silhouette of lovers holding hands" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFrV7CQMJpYx3oeX9aBWGNIYoEUDuPu2LIf3k641i002L-b5BlfnO4-PDl2OkwUvEYHvaYDtPytIovCkqhKsJKvlAYUA1S0JXjOh-FhvmMfNXj35Z0kObzgOCSMrR-2g7XULahA8noHwuyw8t49-8eQ1-y0AMgwsE5Rt4HlAFvUFPZ6Uj1kp-5yxwaTmfJFWlbAOp2iXBlwPkrocDLB3OH82Wg0ffIyZSuRz_94W4P5UrxXRYHWSTI"/>
+<div class="absolute inset-0 bg-primary-container/40 flex items-center justify-center">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-ping"></span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-body-md text-body-md text-primary font-bold truncate">Apna Bana Le</span>
+<span class="material-symbols-outlined text-tertiary text-[14px]">volume_up</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Arijit Singh, Sachin-Jigar</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-primary-container/20 text-primary">94 BPM</span>
+<span class="font-label-mono text-label-mono text-primary font-medium">4:21</span>
+<button aria-label="Current Track Active" class="track-play-btn w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+</div>
+</div>
+<!-- Track 5: Excuses -->
+<div class="track-row group flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer shadow-sm active:bg-surface-container-high" data-artist="AP Dhillon" data-duration="2:56" data-track="Excuses">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-surface-container-highest">
+<img alt="Excuses" class="w-full h-full object-cover" data-alt="Neo-noir vintage convertible driving through wet city streets reflecting neon purple and deep cyan signboards, moody lens flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6N43VxBzTB-TXNWIaMVMYRyQJEW1c0z30T5xt-yipmjM4Klm4QY76vbGRbNzQnC_QjD2U49DufiTLBVjGsivcQGevh_wzQIXFxZrOS4xJN50A4zHDV-rtNswxmeH-CcSGQH-IsF2LFoWql7py64EquFvCx-nFUSjfDxYHlPb9kVXH_7PsS2eTvvVcxowHrJ3cL-Tjb3pZ1W-Kmzta-UJurpmdCul5BG-MXs6QxWdRBoBahq4bQele"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-[20px]">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Excuses</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">AP Dhillon, Gurinder Gill</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">110 BPM</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">2:56</span>
+<button aria-label="Play Excuses" class="track-play-btn w-9 h-9 rounded-full bg-surface-container-highest hover:bg-primary hover:text-on-primary flex items-center justify-center text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Track 6: Tum Se Hi -->
+<div class="track-row group flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer shadow-sm active:bg-surface-container-high" data-artist="Mohit Chauhan" data-duration="5:23" data-track="Tum Se Hi">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-surface-container-highest">
+<img alt="Tum Se Hi" class="w-full h-full object-cover" data-alt="A train window framed against lush green misty mountains with raindrops sliding down glass, vintage warm romantic vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyVQJm16MeV420E8tkDZ7A0AOAlnKUVBRcAUvtK02CmmRee0ploLc6oxQ3ipxAK7gkujViItYKpNxqyc3uLTKlEMSB-nXXMFhLszAeO9EPMWC_G1X3Z9mRCjLseVcKy1QkUgepDxRpi5fkEerHwLKYOXXW8f5ncNviV_a2ZZ6OLWvU01cOQaJMsgCJnwIXWn1KDvGghxoJI_i0Vi6s7UuC0lgNUYJlb_wKFWOLo0vn0xFgkAS_GmBW"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-[20px]">play_arrow</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Tum Se Hi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Mohit Chauhan, Pritam</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">80 BPM</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">5:23</span>
+<button aria-label="Play Tum Se Hi" class="track-play-btn w-9 h-9 rounded-full bg-surface-container-highest hover:bg-primary hover:text-on-primary flex items-center justify-center text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- External Streaming Hubs & Quick Connect -->
+<section class="flex flex-col gap-space-sm w-full pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-on-surface-variant">External Streaming Sync</span>
+<span class="font-label-md text-label-md text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Ready to Cast
+      </span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Spotify Launch -->
+<a class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-sm group" href="#">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 text-[#1DB954]">
+<span class="material-symbols-outlined text-[24px]">podcasts</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate font-semibold group-hover:text-primary transition-colors">Spotify</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Open Playlist</span>
+</div>
+</a>
+<!-- Apple Music Launch -->
+<a class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-sm group" href="#">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 text-[#FC3C44]">
+<span class="material-symbols-outlined text-[24px]">music_cast</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate font-semibold group-hover:text-primary transition-colors">Apple Music</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Lossless ALAC</span>
+</div>
+</a>
+</div>
+</section>
+<!-- Sticky Mobile Mini-Player Bar (docked above bottom nav bar) -->
+<aside class="fixed bottom-20 left-3 right-3 z-40 max-w-md mx-auto rounded-xl bg-surface-container-highest/95 backdrop-blur-xl p-3 shadow-[0_12px_36px_rgba(0,0,0,0.6)]">
+<!-- Mini progress line -->
+<div class="w-full bg-surface-bright h-1 rounded-full overflow-hidden mb-2 relative">
+<div class="h-full bg-primary rounded-full transition-all duration-300" id="playerProgressBar" style="width: 28.5%;"></div>
+</div>
+<div class="flex items-center justify-between gap-space-xs">
+<!-- Cover & Titles -->
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-surface-container-low shadow-sm relative">
+<img alt="Now playing album" class="w-full h-full object-cover" data-alt="Square thumbnail of romantic dusk forest scene with subtle blue vignette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLKUk0LG4RisH6-OorZeUsP6u7v72gP0ShoUyPCwbWQH45slFQMKC38Ks40V9HS8QQDP3ZMP27Z_FvXyWTm-Ft-SiUGlmrY4XGw65YRYEZV8DhLVjL53vrtysk3gM-o3RX8m99_vmC_WJ2MVFc8WB3-2CJY6cWLk-BfVoXI391awt8D9bmfWw_696V5Wq-bfgCsZbbKkjVOj9Mob9RG1RKj3sTikcGIMXKzoN22ah7aTc1KXZEXPuj"/>
+<div class="absolute inset-0 bg-primary-container/20"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate" id="playerTrackTitle">Apna Bana Le</span>
+<span class="font-label-mono text-label-mono px-1 rounded bg-surface-bright text-tertiary">320k</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface-variant truncate" id="playerArtist">Arijit Singh</span>
+<span class="text-on-surface-variant text-[10px]">•</span>
+<span class="font-label-mono text-label-mono text-primary-fixed-dim">1:14 / 4:21</span>
+</div>
+</div>
+</div>
+<!-- Player Controls -->
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="Previous Track" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-95 transition-transform" id="playerPrevBtn">
+<span class="material-symbols-outlined text-[20px]">skip_previous</span>
+</button>
+<button aria-label="Play/Pause" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md shadow-primary-container/40 active:scale-90 transition-transform" id="playerPlayPauseBtn">
+<span class="material-symbols-outlined text-[22px]" id="playerPlayIcon" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button aria-label="Next Track" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-95 transition-transform" id="playerNextBtn">
+<span class="material-symbols-outlined text-[20px]">skip_next</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+<script>
+  (function initHiFiAudioUI() {
+    // Interactive Filter Pills
+    const filterPills = document.querySelectorAll('.filter-pill');
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => {
+          p.classList.remove('bg-primary-container', 'text-on-primary-container', 'shadow-md', 'shadow-primary-container/25', 'font-semibold');
+          p.classList.add('bg-surface-container-high', 'text-on-surface-variant', 'font-medium');
+        });
+        pill.classList.remove('bg-surface-container-high', 'text-on-surface-variant', 'font-medium');
+        pill.classList.add('bg-primary-container', 'text-on-primary-container', 'shadow-md', 'shadow-primary-container/25', 'font-semibold');
+      });
+    });
+
+    // Interactive Track Row Selection
+    const trackRows = document.querySelectorAll('.track-row');
+    const playerTrackTitle = document.getElementById('playerTrackTitle');
+    const playerArtist = document.getElementById('playerArtist');
+    const playerPlayIcon = document.getElementById('playerPlayIcon');
+    const playerProgressBar = document.getElementById('playerProgressBar');
+
+    let isPlaying = true;
+
+    trackRows.forEach(row => {
+      row.addEventListener('click', () => {
+        const title = row.getAttribute('data-track');
+        const artist = row.getAttribute('data-artist');
+        if (title && artist) {
+          playerTrackTitle.textContent = title;
+          playerArtist.textContent = artist;
+          isPlaying = true;
+          playerPlayIcon.textContent = 'pause';
+          playerProgressBar.style.width = '15%';
+
+          // Visually highlight active track
+          trackRows.forEach(r => {
+            r.classList.remove('bg-surface-container-high');
+            r.classList.add('bg-surface-container-low');
+          });
+          row.classList.remove('bg-surface-container-low');
+          row.classList.add('bg-surface-container-high');
+        }
+      });
+    });
+
+    // Mini Player Play/Pause Toggle
+    const playPauseBtn = document.getElementById('playerPlayPauseBtn');
+    if (playPauseBtn) {
+      playPauseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isPlaying = !isPlaying;
+        playerPlayIcon.textContent = isPlaying ? 'pause' : 'play_arrow';
+        const eqVisualizer = document.getElementById('eqVisualizer');
+        if (eqVisualizer) {
+          const bars = eqVisualizer.querySelectorAll('span');
+          bars.forEach(bar => {
+            if (isPlaying) {
+              bar.classList.add('animate-pulse');
+            } else {
+              bar.classList.remove('animate-pulse');
+            }
+          });
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-primary [&amp;&gt;div]:bg-primary-container/20 [&amp;&gt;div]:shadow-[0_0_16px_rgba(37,99,235,0.35)]"><div class="flex justify-around items-center h-16 px-space-xs max-w-md mx-auto"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] px-2 text-on-surface-variant hover:text-on-surface transition-all" data-path="home" href="#"><div class="w-10 h-7 flex items-center justify-center rounded-full transition-all"><span class="material-symbols-outlined text-[20px]">home</span></div><span class="font-label-md text-label-md font-medium">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] px-2 transition-all text-primary [&amp;&gt;div]:bg-primary-container/20 [&amp;&gt;div]:shadow-[0_0_16px_rgba(37,99,235,0.35)]" data-path="music" href="#"><div class="w-10 h-7 flex items-center justify-center rounded-full transition-all"><span class="material-symbols-outlined text-[20px]">headphones</span></div><span class="font-label-md text-label-md font-medium">Music</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] px-2 text-on-surface-variant hover:text-on-surface transition-all" data-path="movies" href="#"><div class="w-10 h-7 flex items-center justify-center rounded-full transition-all"><span class="material-symbols-outlined text-[20px]">movie</span></div><span class="font-label-md text-label-md font-medium">Movies</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] px-2 text-on-surface-variant hover:text-on-surface transition-all" data-path="gaming" href="#"><div class="w-10 h-7 flex items-center justify-center rounded-full transition-all"><span class="material-symbols-outlined text-[20px]">sports_esports</span></div><span class="font-label-md text-label-md font-medium">Gaming</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] px-2 text-on-surface-variant hover:text-on-surface transition-all" data-path="admin-control" href="#"><div class="w-10 h-7 flex items-center justify-center rounded-full transition-all"><span class="material-symbols-outlined text-[20px]">shield_person</span></div><span class="font-label-md text-label-md font-medium">Admin</span></a></div></nav></body></html>
