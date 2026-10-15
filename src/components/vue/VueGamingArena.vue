@@ -58,7 +58,7 @@
           <div class="group relative flex flex-col justify-between rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-blue-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-950/30 overflow-hidden">
             <div class="relative h-56 w-full overflow-hidden bg-slate-950">
               <img
-                src="/images/showcase-gaming-rig.jpg"
+                :src="'/images/showcase-gaming-rig.jpg'"
                 alt="Valorant Setup"
                 @error="onImgError"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -112,7 +112,7 @@
           <div class="group relative flex flex-col justify-between rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-950/30 overflow-hidden">
             <div class="relative h-56 w-full overflow-hidden bg-slate-950">
               <img
-                src="/images/showcase-bollywood-music.jpg"
+                :src="'/images/showcase-bollywood-music.jpg'"
                 alt="Free Fire MAX Setup"
                 @error="onImgError"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -164,7 +164,7 @@
           <div class="group relative flex flex-col justify-between rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-[#4edea3]/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-950/30 overflow-hidden">
             <div class="relative h-56 w-full overflow-hidden bg-slate-950">
               <img
-                src="/images/showcase-cinema-2026.jpg"
+                :src="'/images/showcase-cinema-2026.jpg'"
                 alt="GTA V Setup"
                 @error="onImgError"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
