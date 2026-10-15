@@ -27,27 +27,36 @@
           </p>
 
           <!-- Stats Bar & Hero Metadata Strip -->
-          <div class="pt-space-sm flex flex-wrap md:flex-nowrap items-center justify-center gap-space-xs sm:gap-space-sm md:gap-space-md text-slate-400 font-label-md text-label-md md:whitespace-nowrap">
-            <div class="flex items-center gap-space-xs shrink-0">
-              <span class="material-symbols-outlined text-blue-400 text-[20px]" style="font-variation-settings: 'FILL' 1;">headphones</span>
-              <span class="text-slate-200 font-title-md text-title-md font-medium">Bollywood &amp; Punjabi Hits</span>
+          <!-- Stats Bar & Hero Metadata Strip (2x2 Grid on Mobile, Flex Row on Desktop) -->
+          <div class="pt-space-sm w-full max-w-md sm:max-w-lg md:max-w-none mx-auto grid grid-cols-2 md:flex md:flex-nowrap items-center justify-center gap-2 sm:gap-3 md:gap-space-md text-slate-400 font-label-md text-label-md md:whitespace-nowrap">
+            <!-- Item 1: Bollywood & Punjabi Hits -->
+            <div class="flex items-center justify-center gap-1.5 sm:gap-2 p-2 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800/80 backdrop-blur-md md:bg-transparent md:border-0 md:p-0">
+              <span class="material-symbols-outlined text-blue-400 text-[18px] sm:text-[20px] shrink-0" style="font-variation-settings: 'FILL' 1;">headphones</span>
+              <span class="text-slate-200 font-title-md text-xs sm:text-sm font-medium text-center md:text-left leading-tight">Bollywood &amp; Punjabi Hits</span>
             </div>
-            <div class="h-4 w-px bg-slate-800 hidden sm:block shrink-0"></div>
-            <div class="flex items-center gap-space-xs shrink-0">
-              <span class="material-symbols-outlined text-indigo-400 text-[20px]" style="font-variation-settings: 'FILL' 1;">equalizer</span>
-              <span class="text-slate-200 font-title-md text-title-md font-medium">Spotify &amp; YouTube</span>
-            </div>
-            <div class="h-4 w-px bg-slate-800 hidden sm:block shrink-0"></div>
-            <div class="flex items-center gap-space-xs shrink-0">
-              <span class="material-symbols-outlined text-blue-400 text-[20px]" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
-              <span class="text-slate-200 font-title-md text-title-md font-medium">50+ Curated Bangers</span>
-            </div>
-            <div class="h-4 w-px bg-slate-800 hidden sm:block shrink-0"></div>
             
-            <!-- Live Audio Visualizer Pill -->
-            <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 backdrop-blur-md shadow-sm shrink-0">
-              <span class="material-symbols-outlined text-blue-400 text-[18px]">graphic_eq</span>
-              <div class="flex items-end gap-1 h-4 px-1">
+            <div class="h-4 w-px bg-slate-800 hidden md:block shrink-0"></div>
+
+            <!-- Item 2: Spotify & YouTube -->
+            <div class="flex items-center justify-center gap-1.5 sm:gap-2 p-2 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800/80 backdrop-blur-md md:bg-transparent md:border-0 md:p-0">
+              <span class="material-symbols-outlined text-indigo-400 text-[18px] sm:text-[20px] shrink-0" style="font-variation-settings: 'FILL' 1;">equalizer</span>
+              <span class="text-slate-200 font-title-md text-xs sm:text-sm font-medium text-center md:text-left leading-tight">Spotify &amp; YouTube</span>
+            </div>
+
+            <div class="h-4 w-px bg-slate-800 hidden md:block shrink-0"></div>
+
+            <!-- Item 3: 50+ Curated Bangers -->
+            <div class="flex items-center justify-center gap-1.5 sm:gap-2 p-2 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800/80 backdrop-blur-md md:bg-transparent md:border-0 md:p-0">
+              <span class="material-symbols-outlined text-blue-400 text-[18px] sm:text-[20px] shrink-0" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+              <span class="text-slate-200 font-title-md text-xs sm:text-sm font-medium text-center md:text-left leading-tight">50+ Curated Bangers</span>
+            </div>
+
+            <div class="h-4 w-px bg-slate-800 hidden md:block shrink-0"></div>
+            
+            <!-- Item 4: Live Audio Visualizer Pill -->
+            <div class="flex items-center justify-center gap-1.5 p-2 sm:p-2.5 md:py-1 md:px-3 rounded-xl md:rounded-full bg-slate-900/80 md:bg-slate-900 border border-slate-800/80 md:border-slate-800 backdrop-blur-md shadow-sm">
+              <span class="material-symbols-outlined text-blue-400 text-[18px] shrink-0">graphic_eq</span>
+              <div class="flex items-end gap-1 h-4 px-0.5 sm:px-1 shrink-0">
                 <span class="w-1 bg-blue-500 rounded-full hero-freq-bar" style="height:14px; animation-delay:0ms;"></span>
                 <span class="w-1 bg-blue-400 rounded-full hero-freq-bar" style="height:18px; animation-delay:180ms;"></span>
                 <span class="w-1 bg-indigo-400 rounded-full hero-freq-bar" style="height:11px; animation-delay:360ms;"></span>
@@ -55,7 +64,7 @@
                 <span class="w-1 bg-indigo-400 rounded-full hero-freq-bar" style="height:13px; animation-delay:270ms;"></span>
                 <span class="w-1 bg-blue-400 rounded-full hero-freq-bar" style="height:15px; animation-delay:450ms;"></span>
               </div>
-              <span class="text-xs font-medium text-slate-300 uppercase tracking-wider pl-1">Live Hi-Fi EQ</span>
+              <span class="text-xs font-medium text-slate-300 uppercase tracking-wider pl-0.5 sm:pl-1 shrink-0">Live Hi-Fi EQ</span>
             </div>
           </div>
         </div>
