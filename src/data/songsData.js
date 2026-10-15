@@ -7,6 +7,7 @@
 export const songsData = [
   {
     id: "diljit-born-to-shine",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d2/89/ac/d289ac98-749e-3822-6b6e-b06aa4815715/859740651597_cover.jpg/600x600bb.jpg",
     title: "Born to Shine",
     movie: "G.O.A.T (2020)",
     artist: "Diljit Dosanjh",
@@ -46,6 +47,7 @@ Munde hunde ne star goriye!`
   },
   {
     id: "arijit-kesariya",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/9f/13/ca/9f13ca3b-e533-03e0-f19a-f0aaa774581d/196589311191.jpg/600x600bb.jpg",
     title: "Kesariya",
     movie: "Brahmāstra (2022)",
     artist: "Arijit Singh, Pritam",
@@ -82,6 +84,7 @@ Rain saari teri khair manaun!`
   },
   {
     id: "karan-aujla-softly",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c9/6b/3f/c96b3ff3-9cf6-4ce6-05aa-9f11474bd569/886443938373.jpg/600x600bb.jpg",
     title: "Softly",
     movie: "Four You (2023)",
     artist: "Karan Aujla, Ikky",
@@ -116,6 +119,7 @@ Duniya nu bhull ke tu takk goriye!`
   },
   {
     id: "arijit-apna-bana-le",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/2e/0b/c0/2e0bc070-112f-a827-6ad8-6bc64f7caaff/840214460180.png/600x600bb.jpg",
     title: "Apna Bana Le",
     movie: "Bhediya (2022)",
     artist: "Arijit Singh, Sachin-Jigar",
@@ -149,6 +153,7 @@ Dil ke nagar mein shehar tu basa le piya!`
   },
   {
     id: "ap-dhillon-excuses",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ff/f9/49/fff94931-2476-9de6-7c74-ab60b67f29a7/artwork.jpg/600x600bb.jpg",
     title: "Excuses",
     movie: "Not by Chance (2020)",
     artist: "AP Dhillon, Gurinder Gill",
@@ -180,6 +185,7 @@ Kihde naal laayi ae tu kihde naal challan!`
   },
   {
     id: "mohit-tum-se-hi",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3d/c7/43/3dc74387-e7f4-2342-397c-4cf2037c69a5/8902894623223_cover.jpg/600x600bb.jpg",
     title: "Tum Se Hi",
     movie: "Jab We Met (2007)",
     artist: "Mohit Chauhan, Pritam",
@@ -236,6 +242,7 @@ Tum se hi, tum se hi!`
   },
   {
     id: "kk-zara-sa",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e9/a3/cf/e9a3cf5e-09c3-3d6b-3bf2-c609475b6543/888880551801.jpg/600x600bb.jpg",
     title: "Zara Sa",
     movie: "Jannat (2008)",
     artist: "KK, Pritam",
@@ -293,6 +300,7 @@ Zara sa yaadon mein basa!`
   },
   {
     id: "arijit-tum-hi-ho",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bb/23/ee/bb23eeed-0c35-4f1d-2b11-485622777ae4/8902894353007_cover.jpg/600x600bb.jpg",
     title: "Tum Hi Ho",
     movie: "Aashiqui 2 (2013)",
     artist: "Arijit Singh, Mithoon",
@@ -349,6 +357,7 @@ Meri aashiqui ab tum hi ho!`
   },
   {
     id: "atif-tu-jaane-na",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/43/fb/d8/43fbd870-9a3b-ccd9-8866-2a2c6dc48287/8901854003792.jpg/600x600bb.jpg",
     title: "Tu Jaane Na",
     movie: "Ajab Prem Ki Ghazab Kahani (2009)",
     artist: "Atif Aslam, Pritam",
@@ -402,6 +411,7 @@ Tu jaane na, tu jaane na!`
   },
   {
     id: "kk-labon-ko",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/eb/1b/38/eb1b3835-41fd-de2e-2550-4e9780fa6443/8902894623056_cover.jpg/600x600bb.jpg",
     title: "Labon Ko",
     movie: "Bhool Bhulaiyaa (2007)",
     artist: "KK, Pritam",
@@ -454,6 +464,7 @@ Baahon mein meri!`
   },
   {
     id: "mustafa-tera-mera-rishta",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9d/e5/30/9de5309c-695d-860b-86aa-98d79800d6bb/5054197132803.jpg/600x600bb.jpg",
     title: "Tera Mera Rishta (Original)",
     movie: "Awarapan (2007)",
     artist: "Mustafa Zahid, Pritam",
@@ -519,6 +530,7 @@ Tera mera rishta purana!`
   },
   {
     id: "mustafa-zaroorat",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/4f/3b/0b/4f3b0b0c-45e2-18fa-83e0-61ef4a1a2fa4/8902894355872_cover.jpg/600x600bb.jpg",
     title: "Zaroorat",
     movie: "Ek Villain (2014)",
     artist: "Mustafa Zahid, Mithoon",
@@ -581,6 +593,7 @@ Mujhe teri zaroorat hai!`
   },
   {
     id: "shreya-kalyani",
+    coverUrl: "https://image-cdn-ak.spotifycdn.com/image/ab67616d0000b2739aa819fdf84c78fc1976391d",
     title: "Kalyani",
     movie: "Trending Soulful Fusion (2024)",
     artist: "Shreya Ghoshal, ARJN, KDS, FIFTY4",
@@ -621,6 +634,7 @@ Manwa maahi chain na paave!`
   },
   {
     id: "kala-chashma",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/14/b8/58/14b85883-40a4-0a2e-de65-130f55726ee6/840780180390.png/600x600bb.jpg",
     title: "Kala Chashma",
     movie: "Baar Baar Dekho (2016)",
     artist: "Badshah, Neha Kakkar, Amar Arshi",
@@ -666,6 +680,7 @@ Jachda ae gore mukhde pe!`
   },
   {
     id: "ae-dil-hai-mushkil",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bc/6e/4d/bc6e4d0c-adec-b431-7b60-16f5689f9664/886446201597.jpg/600x600bb.jpg",
     title: "Ae Dil Hai Mushkil",
     movie: "Ae Dil Hai Mushkil (2016)",
     artist: "Arijit Singh, Pritam",
@@ -715,6 +730,7 @@ Ae dil hai mushkil!`
   },
   {
     id: "kk-o-jaana",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/77/4d/9f/774d9f5c-830a-c140-f1ae-6e637dc9af14/888880931542.jpg/600x600bb.jpg",
     title: "O Jaana",
     movie: "Raaz: The Mystery Continues (2009)",
     artist: "KK, Raju Singh",
@@ -766,6 +782,7 @@ O jaana, o jaana!`
   },
   {
     id: "sahiba-aditya-rikhari",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cc/c8/e4/ccc8e4f7-935d-50eb-4103-28aebf242248/5021732549112.jpg/600x600bb.jpg",
     title: "Sahiba",
     movie: "Independent Single (2024)",
     artist: "Aditya Rikhari",
@@ -804,6 +821,7 @@ Sahiba, dhoondhe tujhe zameen aasmaan!`
   },
   {
     id: "salman-jeene-ke-chaar-din",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/cf/53/9c/cf539c00-d56d-07c6-2177-c43392ea9f36/8902894117753_cover.jpg/600x600bb.jpg",
     title: "Jeene Ke Hain Chaar Din",
     movie: "Mujhse Shaadi Karogi (2004)",
     artist: "Sonu Nigam, Sunidhi Chauhan, Sajid-Wajid",
@@ -844,6 +862,7 @@ Hey hey, jawaani phir na aaye!`
   },
   {
     id: "salman-mujhse-shaadi-karogi",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/cf/53/9c/cf539c00-d56d-07c6-2177-c43392ea9f36/8902894117753_cover.jpg/600x600bb.jpg",
     title: "Mujhse Shaadi Karogi",
     movie: "Mujhse Shaadi Karogi (2004)",
     artist: "Sonu Nigam, Udit Narayan, Sunidhi Chauhan",
@@ -881,6 +900,7 @@ Mujhse shaadi karogi, mujhse shaadi karogi!`
   },
   {
     id: "salman-laal-dupatta",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/cf/53/9c/cf539c00-d56d-07c6-2177-c43392ea9f36/8902894117753_cover.jpg/600x600bb.jpg",
     title: "Laal Dupatta",
     movie: "Mujhse Shaadi Karogi (2004)",
     artist: "Udit Narayan, Alka Yagnik",
@@ -913,6 +933,7 @@ Mujhko piya ne dekh liya haaye re dhoke se!`
   },
   {
     id: "salman-aaja-soniye",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/cf/53/9c/cf539c00-d56d-07c6-2177-c43392ea9f36/8902894117753_cover.jpg/600x600bb.jpg",
     title: "Aaja Soniye",
     movie: "Mujhse Shaadi Karogi (2004)",
     artist: "Sonu Nigam, Alka Yagnik",
@@ -947,6 +968,7 @@ Aaja soniye, aaja soniye!`
   },
   {
     id: "srk-main-hoon-na",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/da/e5/1c/dae51cac-d526-1dc3-5bcc-3d1418fa5fc5/8902894117388_cover.jpg/600x600bb.jpg",
     title: "Main Hoon Na",
     movie: "Main Hoon Na (2004)",
     artist: "Sonu Nigam, Shreya Ghoshal, Anu Malik",
@@ -983,6 +1005,7 @@ Jo chaaho paa lo tum, main hoon na!`
   },
   {
     id: "srk-tumse-milke-dil-ka",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/da/e5/1c/dae51cac-d526-1dc3-5bcc-3d1418fa5fc5/8902894117388_cover.jpg/600x600bb.jpg",
     title: "Tumse Milke Dil Ka Hai Jo Haal",
     movie: "Main Hoon Na (2004)",
     artist: "Sonu Nigam, Altaf Raja, Anu Malik",
@@ -1019,6 +1042,7 @@ Ho gaya hai kaisa yeh kamaal kya kahein!`
   },
   {
     id: "srk-chale-jaise-hawayein",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/da/e5/1c/dae51cac-d526-1dc3-5bcc-3d1418fa5fc5/8902894117388_cover.jpg/600x600bb.jpg",
     title: "Chale Jaise Hawayein",
     movie: "Main Hoon Na (2004)",
     artist: "KK, Vasundhara Das",
@@ -1054,6 +1078,7 @@ Chale jaise hawayein sanan sanan!`
   },
   {
     id: "taarzan-oh-lala-re",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2c/3c/0f/2c3c0f8a-af12-e4ae-fd5c-ab2bfc144a25/8904337258795.jpg/600x600bb.jpg",
     title: "Oh Lala Re",
     movie: "Taarzan: The Wonder Car (2004)",
     artist: "KK, Alka Yagnik, Himesh Reshammiya",
@@ -1088,6 +1113,7 @@ O lala re, o lala re!`
   },
   {
     id: "dhoom-dilbara",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/37/16/6f/37166fe6-9203-aa32-9202-ed73344eeae3/849486005860_cover.jpg/600x600bb.jpg",
     title: "Dilbara",
     movie: "Dhoom (2004)",
     artist: "Abhijeet Bhattacharya, Sowmya Raoh, Pritam",
@@ -1119,6 +1145,7 @@ Dilbara, dilbara, tere pyaar mein hua kharaab!`
   },
   {
     id: "fukrey-ishq-de-fanniyar",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/27/26/79/27267993-521b-0ea9-5b7f-2a62c748e575/840780180598.png/600x600bb.jpg",
     title: "Ishq De Fanniyar (Male)",
     movie: "Fukrey Returns (2017)",
     artist: "Shaarib & Toshi, Kumaar",
@@ -1151,6 +1178,7 @@ Dilon te rang chad gaye!`
   },
   {
     id: "humsafar-akhil",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/7c/6e/e7/7c6ee7c8-c1f3-e40f-1ec7-7ff96d0776f8/8902894358804_cover.jpg/600x600bb.jpg",
     title: "Humsafar",
     movie: "Badrinath Ki Dulhania (2017)",
     artist: "Akhil Sachdeva, Mansheel Gujral",
@@ -1184,6 +1212,7 @@ Rahunga bas wahin umrr bhar!`
   },
   {
     id: "atif-dekhte-dekhte",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/fc/d7/6f/fcd76fee-c483-6140-2982-91f39dfdab58/8902894360418_cover.jpg/600x600bb.jpg",
     title: "Dekhte Dekhte",
     movie: "Batti Gul Meter Chalu (2018)",
     artist: "Atif Aslam, Nusrat Fateh Ali Khan, Rochak Kohli",
@@ -1214,6 +1243,7 @@ Kya se kya ho gaye dekhte dekhte!`
   },
   {
     id: "ik-mulaqaat-dreamgirl",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/45/03/c7/4503c758-2660-c42b-537b-1254bb99b3c2/8718857906544.png/600x600bb.jpg",
     title: "Ik Mulaqaat",
     movie: "Dream Girl (2019)",
     artist: "Altamash Faridi, Palak Muchhal, Meet Bros",
@@ -1244,6 +1274,7 @@ Unka yun muskuraana ghazab ho gaya!`
   },
   {
     id: "mere-rashke-qamar",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b2/ca/61/b2ca61e5-2ab3-f7ff-8ae1-28cb0a1af2f3/8902894359689_cover.jpg/600x600bb.jpg",
     title: "Mere Rashke Qamar",
     movie: "Baadshaho (2017)",
     artist: "Nusrat Fateh Ali Khan, Rahat Fateh Ali Khan",
@@ -1274,6 +1305,7 @@ Aag aisi lagayi maza aa gaya!`
   },
   {
     id: "salman-hangover",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music20/v4/ed/c6/66/edc6667a-0fea-5b7f-955a-dea22fecb074/8902894356015_cover.jpg/600x600bb.jpg",
     title: "Hangover",
     movie: "Kick (2014)",
     artist: "Salman Khan, Shreya Ghoshal, Meet Bros",
@@ -1304,6 +1336,7 @@ Hangover teri baaton ka!`
   },
   {
     id: "mujhko-barsaat-bana-lo",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music71/v4/5e/c8/65/5ec8655a-9b6b-d510-6987-75513666c8bb/8902894358170_cover.jpg/600x600bb.jpg",
     title: "Mujhko Barsaat Bana Lo",
     movie: "Junooniyat (2016)",
     artist: "Armaan Malik, Jeet Gannguli",
@@ -1336,6 +1369,7 @@ Mujhko barsaat bana lo!`
   },
   {
     id: "locha-e-ulfat",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/e1/1b/83/e11b8398-0089-cfb1-f998-16125b3f17c4/8902894355612_cover.jpg/600x600bb.jpg",
     title: "Locha-E-Ulfat",
     movie: "2 States (2014)",
     artist: "Benny Dayal, Shankar-Ehsaan-Loy",
@@ -1365,6 +1399,7 @@ Yeh kaisa chakkar chal gaya!`
   },
   {
     id: "srk-tere-liye",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/54/bf/16/54bf16a4-e56b-64aa-4afa-f5a122d1e283/849486008182_cover.jpg/600x600bb.jpg",
     title: "Tere Liye",
     movie: "Veer-Zaara (2004)",
     artist: "Lata Mangeshkar, Roop Kumar Rathod, Madan Mohan",
@@ -1401,6 +1436,7 @@ Tere liye, tere liye!`
   },
   {
     id: "atif-tere-liye-prince",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/88/92/1d/88921d57-d5b1-25f7-8897-3dbb3858e1d4/8901854003938.jpg/600x600bb.jpg",
     title: "Tere Liye",
     movie: "Prince (2010)",
     artist: "Atif Aslam, Shreya Ghoshal",
@@ -1445,6 +1481,7 @@ Chhod di khudai maine tere liye!`
   },
   {
     id: "armaan-tumhe-apna-banane-ka",
+    coverUrl: "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b2732f8e4f7be41a08c891d594a8",
     title: "Tumhe Apna Banane Ka",
     movie: "Hate Story 3 (2015)",
     artist: "Armaan Malik, Neeti Mohan",
@@ -1492,6 +1529,7 @@ Sar pe sawaar hai, kya karoon!`
   },
   {
     id: "armaan-wajah-tum-ho",
+    coverUrl: "https://image-cdn-ak.spotifycdn.com/image/ab67616d0000b2735b64b60fed926172156419c8",
     title: "Wajah Tum Ho",
     movie: "Hate Story 3 (2015)",
     artist: "Armaan Malik",
@@ -1536,6 +1574,7 @@ Wajah tum ho, wajah tum ho!`
   },
   {
     id: "shaan-my-dil-goes-mmmm",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/f5/11/1d/f5111d96-0ade-8d52-85da-82cabfe91ca3/849486008090_cover.jpg/600x600bb.jpg",
     title: "My Dil Goes Mmmm",
     movie: "Salaam Namaste (2005)",
     artist: "Shaan, Gayatri Iyer",
