@@ -13,17 +13,24 @@
           <!-- Eyebrow Pill -->
           <div class="inline-flex items-center gap-space-xs px-3.5 py-1 rounded-full bg-slate-900/90 border border-slate-800 shadow-sm backdrop-blur-md">
             <span class="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)] animate-pulse"></span>
-            <span class="font-label-sm text-label-sm text-blue-400 uppercase tracking-widest font-semibold">All the Songs I Love</span>
+            <span class="font-label-sm text-label-sm text-blue-400 uppercase tracking-widest font-semibold">
+              {{ musicSection?.eyebrow || 'All the Songs I Love' }}
+            </span>
           </div>
 
           <!-- Main Title -->
           <h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-[#f8fafc] tracking-tight">
-            Vibe &amp; Rhythm: <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-500 bg-clip-text text-transparent">Bollywood &amp; Punjabi</span>
+            <template v-if="musicSection?.heading">
+              {{ musicSection.heading }}
+            </template>
+            <template v-else>
+              Vibe &amp; Rhythm: <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-500 bg-clip-text text-transparent">Bollywood &amp; Punjabi</span>
+            </template>
           </h1>
 
           <!-- Subtitle -->
           <p class="font-body-lg text-body-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Discover the music I enjoy, explore featured tracks, and listen to handpicked Bollywood and Punjabi songs that define my taste.
+            {{ musicSection?.subtitle || 'Discover the music I enjoy, explore featured tracks, and listen to handpicked Bollywood and Punjabi songs that define my taste.' }}
           </p>
 
           <!-- Stats Bar & Hero Metadata Strip -->
@@ -411,11 +418,40 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { songsData } from '../../data/songsData.js';
 
-const songs = ref(songsData || []);
+const props = defineProps({
+  songs: {
+    type: Array,
+    default: () => songsData || [],
+  },
+  musicSection: {
+    type: Object,
+    default: () => ({}),
+  },
+  onNavigate: {
+    type: Function,
+    default: null,
+  },
+});
+
+const songs = ref(props.songs && props.songs.length > 0 ? props.songs : (songsData || []));
 const currentSong = ref(songs.value[0] || {});
+
+watch(
+  () => props.songs,
+  (newSongs) => {
+    if (newSongs && newSongs.length > 0) {
+      songs.value = newSongs;
+      if (!currentSong.value?.id || !newSongs.find((s) => s.id === currentSong.value.id)) {
+        currentSong.value = newSongs[0] || {};
+      }
+    }
+  },
+  { deep: true }
+);
+
 const activeEngine = ref('spotify'); // 'spotify' | 'youtube'
 const activeCategory = ref('all');
 const isPlaying = ref(true);

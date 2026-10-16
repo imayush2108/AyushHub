@@ -31,6 +31,10 @@ jobs:
 
       - name: Build Project
         run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || 'https://bflhzjbthimcqvclmmsh.supabase.co' }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmbGh6amJ0aGltY3F2Y2xtbXNoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIxMjYxNzcsImV4cCI6MjEwNzcwMjE3N30.8L22LEob1u6Sh6Nmeio1vTz0VjhU7HufHVFVz_L1Auo' }}
+          VITE_ADMIN_EMAIL: ${{ secrets.VITE_ADMIN_EMAIL || 'ayushshrivastava2108@gmail.com' }}
 
       - name: Deploy to GitHub Pages (gh-pages)
         uses: peaceiris/actions-gh-pages@v4

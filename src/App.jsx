@@ -9,7 +9,7 @@ import MoviesView from './components/MoviesView';
 import GamingView from './components/GamingView';
 import AboutView from './components/AboutView';
 import ContactView from './components/ContactView';
-import AdminView from './components/AdminView';
+import AdminGuard from './components/AdminGuard';
 
 export default function App() {
   const [activePage, setActivePage] = useState(() => {
@@ -92,7 +92,7 @@ export default function App() {
         {activePage === 'gaming' && <GamingView onNavigate={navigateTo} />}
         {activePage === 'about' && <AboutView onNavigate={navigateTo} />}
         {activePage === 'contact' && <ContactView onNavigate={navigateTo} />}
-        {activePage === 'admin' && <AdminView onNavigate={navigateTo} />}
+        {activePage === 'admin' && <AdminGuard onNavigate={navigateTo} />}
       </main>
 
       {/* Footer */}

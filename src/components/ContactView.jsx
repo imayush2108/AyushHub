@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
+import { useContent } from '../context/ContentContext';
 
 export default function ContactView() {
+  const { siteContent, submitCollaboration } = useContent();
+  const social = siteContent?.socialLinks || {};
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,6 +14,7 @@ export default function ContactView() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const availableTags = [
     '#ValorantScout',
@@ -29,18 +34,29 @@ export default function ContactView() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
     try {
-      confetti({
-        particleCount: 70,
-        spread: 60,
-        origin: { y: 0.6 },
-        colors: ['#3b82f6', '#6366f1', '#4edea3'],
-      });
-    } catch {
-      // ignore
+      if (submitCollaboration) {
+        await submitCollaboration(formData);
+      }
+      setSubmitted(true);
+      try {
+        confetti({
+          particleCount: 70,
+          spread: 60,
+          origin: { y: 0.6 },
+          colors: ['#3b82f6', '#6366f1', '#4edea3'],
+        });
+      } catch {
+        // ignore
+      }
+    } catch (err) {
+      console.warn('Submission notice:', err);
+      setSubmitted(true);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -100,7 +116,7 @@ export default function ContactView() {
                       <div>
                         <h2 className="font-heading text-lg font-bold text-[#f8fafc]">WhatsApp</h2>
                         <p className="text-base font-semibold text-blue-400 tracking-wide mt-0.5 font-mono">
-                          +91 98765 43210
+                          {social.whatsapp || '+91 95086 78989'}
                         </p>
                       </div>
                     </div>
@@ -116,7 +132,7 @@ export default function ContactView() {
                       <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span> Within 2 Hours
                     </span>
                     <a
-                      href="https://wa.me/919876543210"
+                      href={social.whatsapp ? (social.whatsapp.startsWith('http') ? social.whatsapp : `https://wa.me/${social.whatsapp.replace(/[^0-9]/g, '')}`) : 'https://wa.me/919508678989'}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md shadow-blue-900/30 hover:shadow-lg transition-all"
@@ -125,32 +141,6 @@ export default function ContactView() {
                       <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
                     </a>
                   </div>
-                </div>
-
-                {/* Phone Card */}
-                <div className="group relative p-6 rounded-xl bg-slate-900/80 hover:bg-slate-850 border border-slate-800 hover:border-slate-700 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-950/20">
-                  <div className="flex items-start gap-4 mb-3">
-                    <div className="w-12 h-12 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center justify-center text-blue-400 shadow-sm group-hover:scale-105 transition-transform">
-                      <span className="material-symbols-outlined text-[28px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-                        call
-                      </span>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between">
-                        <h2 className="font-heading text-lg font-bold text-[#f8fafc]">Direct Phone</h2>
-                        <span className="text-xs text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-0.5 rounded-full font-mono">
-                          Voice Line
-                        </span>
-                      </div>
-                      <p className="text-base font-semibold text-blue-400 tracking-wide mt-0.5 font-mono">
-                        +91 98765 43210
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-xs text-slate-400 flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[16px] text-blue-400">schedule</span>
-                    Available Mon-Fri, 10 AM - 7 PM IST
-                  </p>
                 </div>
 
                 {/* Email Card */}
@@ -165,11 +155,11 @@ export default function ContactView() {
                       <div className="flex items-center justify-between">
                         <h2 className="font-heading text-lg font-bold text-[#f8fafc]">Official Email</h2>
                         <span className="text-xs text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-0.5 rounded-full font-mono">
-                          Enterprise
+                          Direct Line
                         </span>
                       </div>
-                      <p className="text-base font-semibold text-indigo-400 tracking-wide mt-0.5 font-mono">
-                        ayush@ayushhub.com
+                      <p className="text-base font-semibold text-indigo-400 tracking-wide mt-0.5 font-mono break-all">
+                        {social.email || 'ayushshrivastava2108@gmail.com'}
                       </p>
                     </div>
                   </div>

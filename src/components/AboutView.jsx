@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from 'react';
+import { useContent } from '../context/ContentContext';
 
 export default function AboutView({ onNavigate }) {
+  const { siteContent } = useContent();
+  const about = siteContent?.about || {};
+
   const [counters, setCounters] = useState({ gaming: 0, tracks: 0, movies: 0, reach: 0 });
 
   useEffect(() => {
-    const targets = { gaming: 10, tracks: 1500, movies: 800, reach: 50 };
+    const targets = about.stats || { gaming: 10, tracks: 1500, movies: 800, reach: 50 };
     let step = 0;
     const interval = setInterval(() => {
       step++;
       const progress = Math.min(step / 30, 1);
       setCounters({
-        gaming: Math.floor(targets.gaming * progress),
-        tracks: Math.floor(targets.tracks * progress),
-        movies: Math.floor(targets.movies * progress),
-        reach: Math.floor(targets.reach * progress),
+        gaming: Math.floor((targets.gaming ?? 10) * progress),
+        tracks: Math.floor((targets.tracks ?? 1500) * progress),
+        movies: Math.floor((targets.movies ?? 800) * progress),
+        reach: Math.floor((targets.reach ?? 50) * progress),
       });
       if (progress >= 1) clearInterval(interval);
     }, 40);
     return () => clearInterval(interval);
-  }, []);
+  }, [about.stats]);
 
   return (
     <div className="w-full text-[#f8fafc] font-sans pb-16">
@@ -74,29 +78,38 @@ export default function AboutView({ onNavigate }) {
             <div className="lg:col-span-7 space-y-5 order-1 lg:order-2">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400">
                 <span className="material-symbols-outlined text-[16px]">verified</span>
-                <span className="text-xs font-semibold uppercase tracking-wider">Meet The Architect</span>
+                <span className="text-xs font-semibold uppercase tracking-wider">{about.badgeText || 'Meet The Architect'}</span>
               </div>
 
               <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[#f8fafc] tracking-tight">
-                Hey, I am{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-200">
-                  Ayush
-                </span>
+                {about.heading ? (
+                  about.heading.includes('Ayush') ? (
+                    <>
+                      {about.heading.split('Ayush')[0]}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-200">Ayush</span>
+                      {about.heading.split('Ayush')[1]}
+                    </>
+                  ) : (
+                    about.heading
+                  )
+                ) : (
+                  <>Hey, I am <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-200">Ayush</span></>
+                )}
               </h1>
 
               <p className="text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed">
-                Where innovation meets creativity, and every digital experience opens new possibilities.
+                {about.subtitle || 'Where innovation meets creativity, and every digital experience opens new possibilities.'}
               </p>
 
               <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 backdrop-blur-md space-y-3 shadow-lg">
                 <div className="flex items-center gap-2 text-blue-400">
                   <span className="material-symbols-outlined">auto_awesome</span>
                   <h2 className="font-heading text-base font-bold uppercase tracking-wider text-slate-200">
-                    My Creative Philosophy
+                    {about.philosophyTitle || 'My Creative Philosophy'}
                   </h2>
                 </div>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Creativity is the foundation of every meaningful digital experience. I believe in combining innovation, imagination, and thoughtful design to transform simple ideas into something extraordinary. Every detail matters, every idea has the power to inspire, and every experience opens the door to new possibilities. My goal is to create meaningful digital experiences that connect with people, spark curiosity, and leave a lasting impression.
+                  {about.philosophyText || 'Creativity is the foundation of every meaningful digital experience. I believe in combining innovation, imagination, and thoughtful design to transform simple ideas into something extraordinary. Every detail matters, every idea has the power to inspire, and every experience opens the door to new possibilities. My goal is to create meaningful digital experiences that connect with people, spark curiosity, and leave a lasting impression.'}
                 </p>
               </div>
 
@@ -174,83 +187,99 @@ export default function AboutView({ onNavigate }) {
         </section>
 
         {/* Section 3: Deep Bio Narrative & Creative Roots */}
-        <section className="w-full px-4 md:px-12 py-12 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            <div className="lg:col-span-4 space-y-3 sticky top-28">
-              <span className="text-xs font-semibold text-blue-400 tracking-widest uppercase">
-                The Origin Story
-              </span>
-              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#f8fafc]">
-                Roots, Rhythms &amp; Reflexes
-              </h2>
-              <p className="text-sm text-slate-400">
-                Every journey begins with a passion, and mine brings together music, movies, and gaming. These interests inspire me to explore new ideas, discover creative experiences, and appreciate the stories, sounds, and challenges that make each world unique. Ayush Hub is a space where these passions come together, reflecting my curiosity, creativity, and enthusiasm for the digital world.
-              </p>
+        {(() => {
+          const story = about.story || {
+            originTag: 'The Origin Story',
+            originTitle: 'Roots, Rhythms & Reflexes',
+            originText: 'Every journey begins with a passion, and mine brings together music, movies, and gaming. These interests inspire me to explore new ideas, discover creative experiences, and appreciate the stories, sounds, and challenges that make each world unique. Ayush Hub is a space where these passions come together, reflecting my curiosity, creativity, and enthusiasm for the digital world.',
+            block1Title: 'Musical Genesis: Folk Beats to Flac Fidelity',
+            block1Text: 'Music is a world of rhythm, emotion, and endless discovery. I enjoy exploring different genres, discovering memorable tracks, and creating playlists for different moods and moments. From energetic beats to relaxing melodies, every song offers a unique experience. Through Ayush Hub, I share my passion for music and celebrate the creativity that makes every track special.',
+            block2Title: 'Cinematic Vision: Spectacle & Emotional Gravity',
+            block2Text: 'Cinema brings together storytelling, emotions, creativity, and imagination. I enjoy exploring different films, discovering memorable characters, appreciating impressive visuals, and experiencing the stories that make each movie unique. From powerful performances to captivating soundtracks, every film offers something worth discovering. Through Ayush Hub, I celebrate the creativity and experiences that make cinema special.',
+            block3Title: 'Esports Grit: Clutch Rounds & Lifelong Camaraderie',
+            block3Text: 'Gaming is a world of strategy, creativity, teamwork, and exciting challenges. I enjoy exploring different games, discovering new ways to play, and appreciating the skill and dedication that make every match engaging. Whether it\'s the thrill of competition or the fun of learning something new, every gaming experience brings its own excitement. Through Ayush Hub, I celebrate gaming and the creativity that makes this world special.',
+          };
 
-              {/* Visual Rhythm Bar Sparkline */}
-              <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 mt-4 space-y-2">
-                <span className="text-xs font-semibold text-slate-400 uppercase">
-                  Creative Passion Index
-                </span>
-                <div className="flex items-end gap-1.5 h-16 pt-2">
-                  <div className="w-full bg-blue-600/40 rounded-t-sm h-[45%]"></div>
-                  <div className="w-full bg-blue-500/60 rounded-t-sm h-[70%]"></div>
-                  <div className="w-full bg-indigo-500 rounded-t-sm h-[90%]"></div>
-                  <div className="w-full bg-blue-600 rounded-t-sm h-[65%]"></div>
-                  <div className="w-full bg-gradient-to-t from-blue-600 to-indigo-500 rounded-t-sm h-[100%] shadow-[0_0_12px_rgba(37,99,235,0.5)]"></div>
-                  <div className="w-full bg-blue-400 rounded-t-sm h-[85%]"></div>
-                  <div className="w-full bg-indigo-600 rounded-t-sm h-[95%]"></div>
+          return (
+            <section className="w-full px-4 md:px-12 py-12 max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                <div className="lg:col-span-4 space-y-3 sticky top-28">
+                  <span className="text-xs font-semibold text-blue-400 tracking-widest uppercase">
+                    {story.originTag || 'The Origin Story'}
+                  </span>
+                  <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#f8fafc]">
+                    {story.originTitle || 'Roots, Rhythms & Reflexes'}
+                  </h2>
+                  <p className="text-sm text-slate-400">
+                    {story.originText}
+                  </p>
+
+                  {/* Visual Rhythm Bar Sparkline */}
+                  <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 mt-4 space-y-2">
+                    <span className="text-xs font-semibold text-slate-400 uppercase">
+                      Creative Passion Index
+                    </span>
+                    <div className="flex items-end gap-1.5 h-16 pt-2">
+                      <div className="w-full bg-blue-600/40 rounded-t-sm h-[45%]"></div>
+                      <div className="w-full bg-blue-500/60 rounded-t-sm h-[70%]"></div>
+                      <div className="w-full bg-indigo-500 rounded-t-sm h-[90%]"></div>
+                      <div className="w-full bg-blue-600 rounded-t-sm h-[65%]"></div>
+                      <div className="w-full bg-gradient-to-t from-blue-600 to-indigo-500 rounded-t-sm h-[100%] shadow-[0_0_12px_rgba(37,99,235,0.5)]"></div>
+                      <div className="w-full bg-blue-400 rounded-t-sm h-[85%]"></div>
+                      <div className="w-full bg-indigo-600 rounded-t-sm h-[95%]"></div>
+                    </div>
+                    <div className="flex justify-between text-xs text-slate-400 pt-1 font-mono">
+                      <span>Audiophile</span>
+                      <span>Cinema</span>
+                      <span>Esports</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex justify-between text-xs text-slate-400 pt-1 font-mono">
-                  <span>Audiophile</span>
-                  <span>Cinema</span>
-                  <span>Esports</span>
+
+                <div className="lg:col-span-8 space-y-4">
+                  {/* Story Block 1 */}
+                  <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition duration-300 space-y-2 shadow-md">
+                    <div className="flex items-center gap-3 text-indigo-400">
+                      <span className="material-symbols-outlined text-[26px]">headphones</span>
+                      <h3 className="font-heading text-lg sm:text-xl font-bold text-[#f8fafc]">
+                        {story.block1Title}
+                      </h3>
+                    </div>
+                    <p className="text-sm text-slate-400 leading-relaxed">
+                      {story.block1Text}
+                    </p>
+                  </div>
+
+                  {/* Story Block 2 */}
+                  <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition duration-300 space-y-2 shadow-md">
+                    <div className="flex items-center gap-3 text-blue-400">
+                      <span className="material-symbols-outlined text-[26px]">theaters</span>
+                      <h3 className="font-heading text-lg sm:text-xl font-bold text-[#f8fafc]">
+                        {story.block2Title}
+                      </h3>
+                    </div>
+                    <p className="text-sm text-slate-400 leading-relaxed">
+                      {story.block2Text}
+                    </p>
+                  </div>
+
+                  {/* Story Block 3 */}
+                  <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition duration-300 space-y-2 shadow-md">
+                    <div className="flex items-center gap-3 text-indigo-400">
+                      <span className="material-symbols-outlined text-[26px]">videogame_asset</span>
+                      <h3 className="font-heading text-lg sm:text-xl font-bold text-[#f8fafc]">
+                        {story.block3Title}
+                      </h3>
+                    </div>
+                    <p className="text-sm text-slate-400 leading-relaxed">
+                      {story.block3Text}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="lg:col-span-8 space-y-4">
-              {/* Story Block 1 */}
-              <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition duration-300 space-y-2 shadow-md">
-                <div className="flex items-center gap-3 text-indigo-400">
-                  <span className="material-symbols-outlined text-[26px]">headphones</span>
-                  <h3 className="font-heading text-lg sm:text-xl font-bold text-[#f8fafc]">
-                    Musical Genesis: Folk Beats to Flac Fidelity
-                  </h3>
-                </div>
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  Music is a world of rhythm, emotion, and endless discovery. I enjoy exploring different genres, discovering memorable tracks, and creating playlists for different moods and moments. From energetic beats to relaxing melodies, every song offers a unique experience. Through Ayush Hub, I share my passion for music and celebrate the creativity that makes every track special.
-                </p>
-              </div>
-
-              {/* Story Block 2 */}
-              <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition duration-300 space-y-2 shadow-md">
-                <div className="flex items-center gap-3 text-blue-400">
-                  <span className="material-symbols-outlined text-[26px]">theaters</span>
-                  <h3 className="font-heading text-lg sm:text-xl font-bold text-[#f8fafc]">
-                    Cinematic Vision: Spectacle &amp; Emotional Gravity
-                  </h3>
-                </div>
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  Cinema brings together storytelling, emotions, creativity, and imagination. I enjoy exploring different films, discovering memorable characters, appreciating impressive visuals, and experiencing the stories that make each movie unique. From powerful performances to captivating soundtracks, every film offers something worth discovering. Through Ayush Hub, I celebrate the creativity and experiences that make cinema special.
-                </p>
-              </div>
-
-              {/* Story Block 3 */}
-              <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition duration-300 space-y-2 shadow-md">
-                <div className="flex items-center gap-3 text-indigo-400">
-                  <span className="material-symbols-outlined text-[26px]">videogame_asset</span>
-                  <h3 className="font-heading text-lg sm:text-xl font-bold text-[#f8fafc]">
-                    Esports Grit: Clutch Rounds &amp; Lifelong Camaraderie
-                  </h3>
-                </div>
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  Gaming is a world of strategy, creativity, teamwork, and exciting challenges. I enjoy exploring different games, discovering new ways to play, and appreciating the skill and dedication that make every match engaging. Whether it's the thrill of competition or the fun of learning something new, every gaming experience brings its own excitement. Through Ayush Hub, I celebrate gaming and the creativity that makes this world special.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+            </section>
+          );
+        })()}
 
         {/* Section 4: Timeline / Milestones */}
         <section className="w-full px-4 md:px-12 py-12 max-w-4xl mx-auto space-y-8">
@@ -340,141 +369,170 @@ export default function AboutView({ onNavigate }) {
         </section>
 
         {/* Section 5: The Pillars That Define Ayush Hub */}
-        <section className="w-full px-4 md:px-12 py-12 max-w-7xl mx-auto space-y-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div>
-              <span className="text-xs font-semibold text-blue-400 uppercase tracking-widest">
-                Selected Tastes
-              </span>
-              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#f8fafc]">
-                The Pillars That Define Ayush Hub
-              </h2>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-400 max-w-sm">
-              A blend of creative play, thoughtful reviews, and tech insights.
-            </p>
-          </div>
+        {(() => {
+          const pillars = about.pillars || {
+            badge: 'Selected Tastes',
+            heading: 'The Pillars That Define Ayush Hub',
+            subtitle: 'A blend of creative play, thoughtful reviews, and tech insights.',
+            card1Title: 'Diljit Dosanjh & Arijit Singh',
+            card1Sub: 'Urban Punjabi • Folk • Soulful Melodies',
+            card2Title: 'Avengers: Endgame & RRR',
+            card2Sub: 'Courage, friendship, and unity.',
+            card3Title: 'VALORANT • Free Fire',
+            card3Sub: 'Open-World Sandbox & Tactical FPS',
+            card4Title: 'Complete PC setup',
+            card4Sub: 'A practical workstation built for creating, editing, and smooth multitasking.',
+          };
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* Card 1: Artist */}
-            <div 
-              onClick={() => onNavigate?.('music')}
-              className="relative overflow-hidden p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition-all duration-300 group shadow-md flex flex-col justify-between cursor-pointer"
-            >
-              <div className="space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-[26px]">mic</span>
-                </div>
+          return (
+            <section className="w-full px-4 md:px-12 py-12 max-w-7xl mx-auto space-y-6">
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
-                  <span className="text-xs font-mono text-slate-400 uppercase">Favorite Artists</span>
-                  <h3 className="font-heading text-lg font-bold text-[#f8fafc] mt-1">
-                    Diljit Dosanjh &amp; Arijit Singh
-                  </h3>
+                  <span className="text-xs font-semibold text-blue-400 uppercase tracking-widest">
+                    {pillars.badge || 'Selected Tastes'}
+                  </span>
+                  <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#f8fafc]">
+                    {pillars.heading || 'The Pillars That Define Ayush Hub'}
+                  </h2>
                 </div>
-              </div>
-              <div className="pt-4 mt-4 border-t border-slate-800/60 flex items-center justify-between text-slate-400">
-                <span className="text-xs">Urban Punjabi • Folk • Soulful Melodies</span>
-                <span className="material-symbols-outlined text-blue-400 text-[20px] group-hover:translate-x-1 transition-transform">music_note</span>
-              </div>
-            </div>
-
-            {/* Card 2: Movie */}
-            <div 
-              onClick={() => onNavigate?.('movies')}
-              className="relative overflow-hidden p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition-all duration-300 group shadow-md flex flex-col justify-between cursor-pointer"
-            >
-              <div className="space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-[26px]">movie_filter</span>
-                </div>
-                <div>
-                  <span className="text-xs font-mono text-slate-400 uppercase">Favorite Movies</span>
-                  <h3 className="font-heading text-lg font-bold text-[#f8fafc] mt-1">
-                    Avengers: Endgame &amp; RRR
-                  </h3>
-                </div>
-              </div>
-              <div className="pt-4 mt-4 border-t border-slate-800/60 flex items-center justify-between text-slate-400">
-                <span className="text-xs">Courage, friendship, and unity.</span>
-                <span className="material-symbols-outlined text-indigo-400 text-[20px] group-hover:translate-x-1 transition-transform">local_movies</span>
-              </div>
-            </div>
-
-            {/* Card 3: Game */}
-            <div 
-              onClick={() => onNavigate?.('gaming')}
-              className="relative overflow-hidden p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition-all duration-300 group shadow-md flex flex-col justify-between cursor-pointer"
-            >
-              <div className="space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-[26px]">stadia_controller</span>
-                </div>
-                <div>
-                  <span className="text-xs font-mono text-slate-400 uppercase">Favorite Games</span>
-                  <h3 className="font-heading text-lg font-bold text-[#f8fafc] mt-1">
-                    VALORANT • Free Fire
-                  </h3>
-                </div>
-              </div>
-              <div className="pt-4 mt-4 border-t border-slate-800/60 flex items-center justify-between text-slate-400">
-                <span className="text-xs">Open-World Sandbox &amp; Tactical FPS</span>
-                <span className="material-symbols-outlined text-blue-400 text-[20px] group-hover:translate-x-1 transition-transform">play_circle</span>
-              </div>
-            </div>
-
-            {/* Card 4: Tech Gear */}
-            <div 
-              onClick={() => onNavigate?.('services')}
-              className="relative overflow-hidden p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition-all duration-300 group shadow-md flex flex-col justify-between cursor-pointer"
-            >
-              <div className="space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-[26px]">desktop_windows</span>
-                </div>
-                <div>
-                  <span className="text-xs font-mono text-slate-400 uppercase">Favorite Setup</span>
-                  <h3 className="font-heading text-lg font-bold text-[#f8fafc] mt-1">
-                    Complete PC setup
-                  </h3>
-                </div>
-              </div>
-              <div className="pt-4 mt-4 border-t border-slate-800/60 flex items-center justify-between text-slate-400">
-                <span className="text-xs">A practical workstation built for creating, editing, and smooth multitasking.</span>
-                <span className="material-symbols-outlined text-indigo-400 text-[20px] group-hover:translate-x-1 transition-transform">tune</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 6: Bottom Interactive CTA Box */}
-        <section className="w-full px-4 md:px-12 py-8 max-w-5xl mx-auto">
-          <div className="relative overflow-hidden rounded-2xl bg-slate-900/90 border border-slate-800 p-6 md:p-10 shadow-2xl">
-            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-              <div className="space-y-2 max-w-xl">
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold">
-                  <span className="material-symbols-outlined text-[16px]">chat_bubble</span>
-                  <span className="uppercase">Open Invitations</span>
-                </div>
-                <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#f8fafc]">
-                  Let's Connect Over Shared Interests
-                </h2>
-                <p className="text-sm text-slate-400">
-                  Have a favourite film to recommend, a playlist to share, or a game to discuss? Let's exchange ideas, discover new favourites, and connect over the things we enjoy.
+                <p className="text-xs sm:text-sm text-slate-400 max-w-sm">
+                  {pillars.subtitle || 'A blend of creative play, thoughtful reviews, and tech insights.'}
                 </p>
               </div>
-              <div className="shrink-0">
-                <button
-                  onClick={() => onNavigate?.('contact')}
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-sm shadow-md shadow-blue-900/30 hover:shadow-lg hover:shadow-blue-800/40 hover:scale-105 transition-all duration-300"
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* Card 1: Artist */}
+                <div 
+                  onClick={() => onNavigate?.('music')}
+                  className="relative overflow-hidden p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition-all duration-300 group shadow-md flex flex-col justify-between cursor-pointer"
                 >
-                  <span>Say Hello on Contact Page</span>
-                  <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
-                </button>
+                  <div className="space-y-3">
+                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
+                      <span className="material-symbols-outlined text-[26px]">mic</span>
+                    </div>
+                    <div>
+                      <span className="text-xs font-mono text-slate-400 uppercase">Favorite Artists</span>
+                      <h3 className="font-heading text-lg font-bold text-[#f8fafc] mt-1">
+                        {pillars.card1Title}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-slate-800/60 flex items-center justify-between text-slate-400">
+                    <span className="text-xs">{pillars.card1Sub}</span>
+                    <span className="material-symbols-outlined text-blue-400 text-[20px] group-hover:translate-x-1 transition-transform">music_note</span>
+                  </div>
+                </div>
+
+                {/* Card 2: Movie */}
+                <div 
+                  onClick={() => onNavigate?.('movies')}
+                  className="relative overflow-hidden p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition-all duration-300 group shadow-md flex flex-col justify-between cursor-pointer"
+                >
+                  <div className="space-y-3">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
+                      <span className="material-symbols-outlined text-[26px]">movie_filter</span>
+                    </div>
+                    <div>
+                      <span className="text-xs font-mono text-slate-400 uppercase">Favorite Movies</span>
+                      <h3 className="font-heading text-lg font-bold text-[#f8fafc] mt-1">
+                        {pillars.card2Title}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-slate-800/60 flex items-center justify-between text-slate-400">
+                    <span className="text-xs">{pillars.card2Sub}</span>
+                    <span className="material-symbols-outlined text-indigo-400 text-[20px] group-hover:translate-x-1 transition-transform">local_movies</span>
+                  </div>
+                </div>
+
+                {/* Card 3: Game */}
+                <div 
+                  onClick={() => onNavigate?.('gaming')}
+                  className="relative overflow-hidden p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition-all duration-300 group shadow-md flex flex-col justify-between cursor-pointer"
+                >
+                  <div className="space-y-3">
+                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
+                      <span className="material-symbols-outlined text-[26px]">stadia_controller</span>
+                    </div>
+                    <div>
+                      <span className="text-xs font-mono text-slate-400 uppercase">Favorite Games</span>
+                      <h3 className="font-heading text-lg font-bold text-[#f8fafc] mt-1">
+                        {pillars.card3Title}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-slate-800/60 flex items-center justify-between text-slate-400">
+                    <span className="text-xs">{pillars.card3Sub}</span>
+                    <span className="material-symbols-outlined text-blue-400 text-[20px] group-hover:translate-x-1 transition-transform">play_circle</span>
+                  </div>
+                </div>
+
+                {/* Card 4: Tech Gear */}
+                <div 
+                  onClick={() => onNavigate?.('services')}
+                  className="relative overflow-hidden p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 transition-all duration-300 group shadow-md flex flex-col justify-between cursor-pointer"
+                >
+                  <div className="space-y-3">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
+                      <span className="material-symbols-outlined text-[26px]">desktop_windows</span>
+                    </div>
+                    <div>
+                      <span className="text-xs font-mono text-slate-400 uppercase">Favorite Setup</span>
+                      <h3 className="font-heading text-lg font-bold text-[#f8fafc] mt-1">
+                        {pillars.card4Title}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-slate-800/60 flex items-center justify-between text-slate-400">
+                    <span className="text-xs">{pillars.card4Sub}</span>
+                    <span className="material-symbols-outlined text-indigo-400 text-[20px] group-hover:translate-x-1 transition-transform">tune</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </section>
+            </section>
+          );
+        })()}
+
+        {/* Section 6: Bottom Interactive CTA Box */}
+        {(() => {
+          const cta = about.cta || {
+            badge: 'Open Invitations',
+            title: "Let's Connect Over Shared Interests",
+            subtitle: 'Have a favourite film to recommend, a playlist to share, or a game to discuss? Let\'s exchange ideas, discover new favourites, and connect over the things we enjoy.',
+            btnText: 'Say Hello on Contact Page',
+          };
+
+          return (
+            <section className="w-full px-4 md:px-12 py-8 max-w-5xl mx-auto">
+              <div className="relative overflow-hidden rounded-2xl bg-slate-900/90 border border-slate-800 p-6 md:p-10 shadow-2xl">
+                <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                  <div className="space-y-2 max-w-xl">
+                    <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold">
+                      <span className="material-symbols-outlined text-[16px]">chat_bubble</span>
+                      <span className="uppercase">{cta.badge || 'Open Invitations'}</span>
+                    </div>
+                    <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#f8fafc]">
+                      {cta.title || "Let's Connect Over Shared Interests"}
+                    </h2>
+                    <p className="text-sm text-slate-400">
+                      {cta.subtitle}
+                    </p>
+                  </div>
+                  <div className="shrink-0">
+                    <button
+                      onClick={() => onNavigate?.('contact')}
+                      className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-sm shadow-md shadow-blue-900/30 hover:shadow-lg hover:shadow-blue-800/40 hover:scale-105 transition-all duration-300 cursor-pointer"
+                    >
+                      <span>{cta.btnText || 'Say Hello on Contact Page'}</span>
+                      <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          );
+        })()}
       </div>
     </div>
   );

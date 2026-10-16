@@ -12,15 +12,22 @@
         <div class="max-w-5xl mx-auto text-center flex flex-col items-center">
           <div class="inline-flex items-center gap-space-xs px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/80 backdrop-blur-md mb-space-md shadow-sm">
             <span class="w-2 h-2 rounded-full bg-blue-400 shadow-sm shadow-blue-400 animate-pulse"></span>
-            <span class="font-label-sm text-label-sm text-blue-400 tracking-wider uppercase font-semibold">All the Movies I Love</span>
+            <span class="font-label-sm text-label-sm text-blue-400 tracking-wider uppercase font-semibold">
+              {{ cinemaSection?.eyebrow || 'All the Movies I Love' }}
+            </span>
           </div>
 
           <h1 class="font-display-hero text-display-hero-mobile md:text-4xl lg:text-[2.65rem] xl:text-display-hero text-[#f8fafc] tracking-tight mb-space-sm max-w-6xl drop-shadow-md lg:whitespace-nowrap">
-            Cinema Vault: <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-200">Bollywood, South &amp; Marvel</span>
+            <template v-if="cinemaSection?.heading">
+              {{ cinemaSection.heading }}
+            </template>
+            <template v-else>
+              Cinema Vault: <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-200">Bollywood, South &amp; Marvel</span>
+            </template>
           </h1>
 
           <p class="font-body-lg text-body-lg text-slate-400 max-w-2xl mb-space-lg leading-relaxed">
-            Epic sagas, thunderous action set-pieces, and MCU multiversal lore reviewed and ranked for true cinephiles. Authentic HD trailer screening room.
+            {{ cinemaSection?.subtitle || 'Epic sagas, thunderous action set-pieces, and MCU multiversal lore reviewed and ranked for true cinephiles. Authentic HD trailer screening room.' }}
           </p>
 
           <div class="flex flex-wrap items-center justify-center gap-space-md mb-space-xl">
@@ -414,10 +421,36 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { moviesData } from '../../data/moviesData.js';
 
-const movies = ref(moviesData || []);
+const props = defineProps({
+  movies: {
+    type: Array,
+    default: () => moviesData || [],
+  },
+  cinemaSection: {
+    type: Object,
+    default: () => ({}),
+  },
+  onNavigate: {
+    type: Function,
+    default: null,
+  },
+});
+
+const movies = ref(props.movies && props.movies.length > 0 ? props.movies : (moviesData || []));
+
+watch(
+  () => props.movies,
+  (newMovies) => {
+    if (newMovies && newMovies.length > 0) {
+      movies.value = newMovies;
+    }
+  },
+  { deep: true }
+);
+
 const activeCategory = ref('all');
 const selectedMovie = ref(null);
 
